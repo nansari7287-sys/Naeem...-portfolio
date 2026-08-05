@@ -92,17 +92,17 @@ export const SOCIALS = [
   {
     name: "Instagram",
     icon: RxInstagramLogo,
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/boundbuildcon",
   },
   {
     name: "Facebook",
     icon: FaFacebook,
-    link: "https://facebook.com",
+    link: "https://www.facebook.com/share/1ESapYFQ6M/",
   },
   {
     name: "Twitter",
     icon: RxTwitterLogo,
-    link: "https://x.com/_sanidhyy",
+    link: "https://x.com/Boundbuildcone",
   },
 ] as const;
 
@@ -259,25 +259,25 @@ export const OTHER_SKILL = [
 
 export const PROJECTS = [
   {
-    title: "Modern Next.js 14 Portfolio",
+    title: "MAGMA API",
     description:
-      'Embark on a journey through my professional evolution with the "Modern Next.js Portfolio" - a dynamic showcase of my skills, experiences, and passion for web development. Crafted with precision and powered by Next.js, this portfolio is more than just a static display; it\'s an immersive experience that reflects the cutting edge of modern web technologies.',
+      "Fast & scalable YouTube API for video search, metadata and media processing.",
     image: "/projects/project-1.png",
-    link: "https://example.com",
+    link: "https://github.com/themagmalord333-oss/MAGMA-API",
   },
   {
-    title: "Interactive Cards Portfolio",
+    title: "MagTrack",
     description:
-      'Step into the extraordinary world of my professional journey through the "Interactive Cards Portfolio" - an innovative and visually captivating platform that redefines the traditional portfolio experience. Ditching the conventional static layout, this portfolio leverages interactive cards to showcase my skills, projects, and personality in an engaging and dynamic manner.',
+      "The ultimate Telegram OSINT tracker. Generate custom links to instantly capture IP, device, and network intelligence directly into your Telegram chat.",
     image: "/projects/project-2.png",
-    link: "https://example.com",
+    link: "https://github.com/themagmalord333-oss/MagTrack",
   },
   {
-    title: "Space Themed Website",
+    title: "TG-DRIVE",
     description:
-      'Embark on an interstellar journey with my "Space Themed Website", a mesmerizing space-themed website that invites you to explore the cosmic wonders beyond our world. Immerse yourself in an awe-inspiring digital experience that blends cutting-edge design with the mysteries of the universe.',
+      "TGDrive - A Google Drive Clone with Telegram Storage.",
     image: "/projects/project-3.png",
-    link: "https://example.com",
+    link: "https://github.com/themagmalord333-oss/TG-DRIVE",
   },
 ] as const;
 
@@ -293,7 +293,7 @@ export const FOOTER_DATA = [
       {
         name: "GitHub",
         icon: RxGithubLogo,
-        link: "https://github.com",
+        link: "https://github.com/themagmalord333-oss",
       },
       {
         name: "Discord",
@@ -308,12 +308,12 @@ export const FOOTER_DATA = [
       {
         name: "Instagram",
         icon: RxInstagramLogo,
-        link: "https://instagram.com",
+        link: "https://www.instagram.com/boundbuildcon",
       },
       {
         name: "Twitter",
         icon: RxTwitterLogo,
-        link: "https://x.com/_sanidhyy",
+        link: "https://x.com/Boundbuildcone",
       },
       {
         name: "Linkedin",
@@ -338,7 +338,7 @@ export const FOOTER_DATA = [
       {
         name: "Contact Me",
         icon: null,
-        link: "mailto:contact@example.com",
+        link: "mailto:the.magma.lord.333@gmail.com",
       },
     ],
   },
@@ -360,5 +360,5 @@ export const NAV_LINKS = [
 ] as const;
 
 export const LINKS = {
-  sourceCode: "https://github.com/sanidhyy/space-portfolio",
+  sourceCode: "https://github.com/themagmalord333-oss",
 };
