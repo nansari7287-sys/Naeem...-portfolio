@@ -16,7 +16,12 @@ export const viewport: Viewport = {
   themeColor: "#030014",
 };
 
-export const metadata: Metadata = siteConfig;
+export const metadata: Metadata = {
+  ...siteConfig,
+  title: "MAGMA | Developer Portfolio",
+  description:
+    "MAGMA builds Telegram Bots, powerful APIs, automation tools and modern web applications.",
+};
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
