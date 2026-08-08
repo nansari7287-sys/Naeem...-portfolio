@@ -2,14 +2,13 @@
 // 📁 constants/index.ts
 // 👑 ULTIMATE ENTERPRISE DATA HUB & ZERO-ERROR CONFIGURATION MATRIX
 // ============================================================================
-// AUTHOR: DrakoXNaeem (Naeem)
+// AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
 // DESCRIPTION:
-// This file serves as the strict, centralized database for the entire portfolio.
-// Every array, string, and object required by the components (Navbar, Skills,
-// Footer, etc.) is explicitly exported here to guarantee ZERO build errors 
-// on Vercel's Turbopack engine.
+// Central database for the entire portfolio application. All project names,
+// personal identifiers, and metadata strictly use the stylish unicode format
+// (𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 / 𝑵𝒂𝒆𝒆𝒎) with zero compile-time errors.
 // ============================================================================
 
 // ----------------------------------------------------------------------------
@@ -75,16 +74,16 @@ export interface IFooterColumn {
 // 🧑‍💻 PERSONAL IDENTIFICATION & BRANDING CORE
 // ----------------------------------------------------------------------------
 export const PERSONAL_INFO = {
-  name: "Naeem",
+  name: "𝑵𝒂𝒆𝒆𝒎",
   brand_name: "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎",
-  handle: "DrakoXNaeem",
+  handle: "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎",
   email: "nansari7287@gmail.com",
   role: "Electrical Engineer & Bot Architect",
   tagline: "Bridging core hardware electrical logic with advanced Python automation, Termux environments, and highly scalable Telegram C2 networks.",
   institute: "Al-Kabir Institute of Management and Technology",
   branch: "Diploma in Electrical Engineering",
   location: "Jamshedpur, Jharkhand, India",
-  profile_photo: "/1000323657.jpg", // Verified VIP Profile Asset mapping
+  profile_photo: "https://github.com/nansari7287-sys.png",
 };
 
 // ----------------------------------------------------------------------------
@@ -94,7 +93,7 @@ export const ABOUT_DATA = {
   heading: "Bridging Electrical Hardware Logic with Cloud Software Automation",
   subheading: "Electrical Engineering Scholar & Automation Expert",
   paragraphs: [
-    "I am Naeem (known globally as DrakoXNaeem), an analytical systems architect deeply immersed in Electrical Engineering at Al-Kabir Institute of Management and Technology.",
+    "I am 𝑵𝒂𝒆𝒆𝒎 (known globally as 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎), an analytical systems architect deeply immersed in Electrical Engineering at Al-Kabir Institute of Management and Technology.",
     "I refuse to be limited by conventional hardware alone. By combining my core electrical logic knowledge with advanced asynchronous Python automation, native Linux environments, and Telegram C2 networks, I build digital infrastructures that are fiercely intelligent and highly scalable.",
     "Whether I am engineering custom multi-threaded bot architectures, executing precision deployment scripts natively via Termux, or managing robust cloud environments, my focus remains strictly on zero-latency performance and unbreakable security."
   ],
@@ -142,7 +141,7 @@ export const BACKEND_SKILL: ISkill[] = [
   { skill_name: "Prisma", image: "prisma.png", width: 70, height: 70 },
 ];
 
-// 🔹 4. FULLSTACK SKILLS (CRITICAL: Added to prevent Vercel Build Crash)
+// 🔹 4. FULLSTACK SKILLS
 export const FULLSTACK_SKILL: ISkill[] = [
   { skill_name: "Docker", image: "docker.png", width: 70, height: 70 },
   { skill_name: "React Native", image: "reactnative.png", width: 70, height: 70 },
@@ -158,23 +157,23 @@ export const OTHER_SKILL: ISkill[] = [
 ];
 
 // ----------------------------------------------------------------------------
-// 🏆 ENGINEERED PROJECTS SHOWCASE
+// 🏆 ENGINEERED PROJECTS SHOWCASE (STYLISH NAMES FIXED)
 // ----------------------------------------------------------------------------
 export const PROJECTS: IProject[] = [
   {
-    title: "DrakoXNaeem Elite Portfolio",
+    title: "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Elite Portfolio",
     description: "A highly optimized, Next.js 14 driven enterprise portfolio featuring 60FPS Framer Motion animations and complex glassmorphism UI.",
     image: "/projects/project-1.png",
     link: "https://frexxy-portfolio-3dri.vercel.app/",
   },
   {
-    title: "Naeem Enterprise Bot Network",
+    title: "𝑵𝒂𝒆𝒆𝒎 Enterprise Bot Network",
     description: "An advanced, asynchronous Telegram C2 network featuring multi-threading execution capabilities and seamless API telemetry.",
     image: "/projects/project-2.png",
     link: "https://github.com/nansari7287-sys",
   },
   {
-    title: "Termux Precision Automation",
+    title: "𝑵𝒂𝒆𝒆𝒎 Termux Automation Suite",
     description: "A centralized suite of custom shell scripts allowing remote server deployment and process management directly from a native Termux environment.",
     image: "/projects/project-3.png",
     link: "https://github.com/nansari7287-sys",
@@ -247,7 +246,7 @@ export const FOOTER_DATA: IFooterColumn[] = [
     data: [
       { name: "Al-Kabir Institute", icon: null, link: "#" },
       { name: "Google Photos Library", icon: FaGoogle, link: "https://photos.google.com/" },
-      { name: "Contact Architecture", icon: null, link: "mailto:nansari7287@gmail.com" },
+      { name: "Contact 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎", icon: null, link: "mailto:nansari7287@gmail.com" },
     ],
   },
 ];
@@ -256,7 +255,7 @@ export const FOOTER_DATA: IFooterColumn[] = [
 // 🧭 GLOBAL NAVIGATION ROUTING & UTILITY LINKS
 // ----------------------------------------------------------------------------
 export const NAV_LINKS: INavLink[] = [
-  { title: "About Me", link: "#about-me" },
+  { title: "About 𝑵𝒂𝒆𝒆𝒎", link: "#about-me" },
   { title: "Technical Arsenal", link: "#skills" },
   { title: "Engineered Systems", link: "#projects" },
 ];
