@@ -59,18 +59,18 @@ export const PERSONAL_INFO = {
   tagline: "Bridging core hardware electrical logic with advanced Python automation, Termux environments, and scalable Telegram C2 networks.",
   institute: "Al-Kabir Institute of Management and Technology",
   branch: "Diploma in Electrical Engineering",
-  location: "Jamshedpur, Jharkhand, India",
-  profile_photo: "/Naeem.jpg",
+  location: "Chino, Jharkhand, India",
+  profile_photo: "https://github.com/nansari7287-sys.png",
 };
 
 // ----------------------------------------------------------------------------
-// 📖 BIOGRAPHY & ARCHITECTURE
+// 📖 BIOGRAPHY & ARCHITECTURE OVERVIEW
 // ----------------------------------------------------------------------------
 export const ABOUT_DATA = {
   heading: "Bridging Electrical Hardware Logic with Cloud Software Automation",
   subheading: "Electrical Engineering Scholar & Automation Expert",
   paragraphs: [
-    "I am 𝑵𝒂𝒆𝒆𝒎 (known globally as 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎), an analytical systems architect deeply immersed in Electrical Engineering at Al-Kabir Institute of Management and Technology.",
+    "I am 𝑵𝒂𝒆𝒆𝒎 (known globally as 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎), an analytical systems architect based in Chino, Jharkhand, India, pursuing Electrical Engineering at Al-Kabir Institute of Management and Technology.",
     "I combine core electrical engineering logic with advanced asynchronous Python automation, native Linux environments, and Telegram C2 networks to build resilient digital infrastructures.",
     "Whether executing precision deployment scripts natively via Termux or managing cloud environments, my focus remains strictly on zero-latency performance and unbreakable security."
   ],
