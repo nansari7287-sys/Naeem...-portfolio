@@ -70,7 +70,7 @@ export const ABOUT_DATA = {
   heading: "Bridging Electrical Hardware Logic with Cloud Software Automation",
   subheading: "Electrical Engineering Scholar & Automation Expert",
   paragraphs: [
-    "I am 𝑵𝒂𝒆𝒆𝒎 (known globally as 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎), an analytical systems architect based in Chino, Jharkhand, India, pursuing Electrical Engineering at Al-Kabir Institute of Management and Technology.",
+    "I am 𝑵𝒂𝒆𝒆𝒎 (known globally as 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎), an analytical systems architect pursuing Electrical Engineering at Al-Kabir Institute of Management and Technology.",
     "I combine core electrical engineering logic with advanced asynchronous Python automation, native Linux environments, and Telegram C2 networks to build resilient digital infrastructures.",
     "Whether executing precision deployment scripts natively via Termux or managing cloud environments, my focus remains strictly on zero-latency performance and unbreakable security."
   ],
