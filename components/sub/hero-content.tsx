@@ -1,9 +1,15 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (IMGBB DIRECT LINK & PERFECT SPACING)
+// 👑 VIP ENTERPRISE HERO COMPONENT (EXACT CASE-SENSITIVE LOCAL ASSET FIX)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
+// ============================================================================
+// DESCRIPTION:
+// - Direct Local Path: Strictly using lowercase '/naeem.jpg' to match Vercel/Linux 
+//   case-sensitivity rules.
+// - Multi-Asset Fallback Pool: Automatically switches between local filenames.
+// - 3-Click Interaction Matrix: Fully optimized touch/click card reveal engine.
 // ============================================================================
 
 "use client";
@@ -14,12 +20,18 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
-// 🔹 ImgBB Verified Direct Image Link
-const PRIMARY_PHOTO = "https://i.ibb.co/6R2594tS/PGPN9ZDW.jpg";
+// 🛡️ Local Fail-Safe Pool (Matching exact names from your public folder)
+const LOCAL_IMAGE_POOL = [
+  "/naeem.jpg",
+  "/IMG_20260529_092047_743.jpg",
+  "https://github.com/nansari7287-sys.png"
+];
 
 export const HeroContent = () => {
-  // 🔹 3-Click State Machine (1: Open, 2: Stay Open, 3: Lock Back)
+  // 🔹 3-Click Interaction State Machine
   const [clickCount, setClickCount] = useState(0);
+  // 🔹 Image Fallback Index
+  const [imgIndex, setImgIndex] = useState(0);
 
   const handleCardInteraction = () => {
     setClickCount((prev) => {
@@ -27,7 +39,7 @@ export const HeroContent = () => {
       if (next >= 3) {
         return 0; // 3rd click locks the card back
       }
-      return next;
+      return next; // 1 = Open, 2 = Remains Open
     });
   };
 
@@ -47,7 +59,7 @@ export const HeroContent = () => {
       */}
       <div className="h-full w-full flex flex-col gap-6 justify-center m-auto text-start lg:w-[58%] relative z-[60]">
         
-        {/* 🌌 BALANCED DARK GLASS SHIELD WITH CLEAN PADDING */}
+        {/* 🌌 BALANCED DARK GLASS SHIELD */}
         <div className="bg-[#030014]/45 backdrop-blur-md p-6 sm:p-10 rounded-3xl border border-purple-500/30 shadow-[0_0_40px_rgba(0,0,0,0.8)] relative z-20 flex flex-col gap-6">
           
           {/* 🔹 Top Welcome Badge */}
@@ -64,7 +76,7 @@ export const HeroContent = () => {
             </h1>
           </motion.div>
 
-          {/* 🔹 Main Headline: Perfectly Centered & Spaced */}
+          {/* 🔹 Main Headline: Perfectly Spaced */}
           <motion.div
             variants={slideInFromLeft(0.5)}
             className="flex flex-col gap-3 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.12] tracking-tight py-2"
@@ -148,7 +160,7 @@ export const HeroContent = () => {
 
       {/* 
         =======================================================================
-        🚀 RIGHT COLUMN: VIP INTERACTIVE IDENTITY CARD (IMGBB PHOTO)
+        🚀 RIGHT COLUMN: VIP INTERACTIVE IDENTITY CARD (LOCAL ASSET)
         =======================================================================
       */}
       <motion.div
@@ -182,12 +194,15 @@ export const HeroContent = () => {
           {/* 🔹 Image Container */}
           <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* Direct ImgBB Image URL */}
+            {/* Direct Local Image with Auto-Fallback Pool */}
             <img
-              src={PRIMARY_PHOTO}
+              src={LOCAL_IMAGE_POOL[imgIndex]}
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
-              referrerPolicy="no-referrer"
-              crossOrigin="anonymous"
+              onError={() => {
+                if (imgIndex < LOCAL_IMAGE_POOL.length - 1) {
+                  setImgIndex((prev) => prev + 1);
+                }
+              }}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               draggable={false}
             />
