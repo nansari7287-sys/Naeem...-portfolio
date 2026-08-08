@@ -1,15 +1,9 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (FAIL-SAFE IMAGE & PERFECTED SPACING)
+// 👑 VIP ENTERPRISE HERO COMPONENT (SECURITY-BYPASS PHOTO ENGINE)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
-// ============================================================================
-// DESCRIPTION:
-// - Universal Image Fix: Direct use of verified external CDN URL to prevent 
-//   broken images on Vercel deployments. Local fallbacks included.
-// - 3-Click Interactive Matrix: Full typesafe reveal/lock engine.
-// - Enhanced Spacing: Main headline typography optimized for professional look.
 // ============================================================================
 
 "use client";
@@ -20,18 +14,24 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
-export const HeroContent = () => {
-  // 🔹 State controlling the 3-click reveal / lock cycle of the Identity Card
-  const [clickCount, setClickCount] = useState<number>(0);
+// 🛡️ Security Bypass Fallback Array
+const PRIMARY_URL = "https://kommodo.ai/i/7pkhnuZplvADbqb0Xiax";
+const BACKUP_URL_1 = "https://i.ibb.co/6R2594tS/PGPN9ZDW.jpg";
+const BACKUP_URL_2 = "/naeem.jpg";
 
-  // 🔹 Interactivity Handler: Tap 1 opens, Tap 2 maintains, Tap 3 locks back.
+export const HeroContent = () => {
+  // 🔹 3-Click Interaction State
+  const [clickCount, setClickCount] = useState<number>(0);
+  // 🔹 Dynamic Image Source State
+  const [imgSrc, setImgSrc] = useState<string>(PRIMARY_URL);
+
   const handleCardInteraction = () => {
     setClickCount((prev) => {
-      const nextCount = prev + 1;
-      if (nextCount >= 3) {
-        return 0; // Locks and resets on the 3rd click
+      const next = prev + 1;
+      if (next >= 3) {
+        return 0; // 3rd click locks the card back
       }
-      return nextCount; // 1 = Opened, 2 = Maintains Open State
+      return next; // 1 = Open, 2 = Remains Open
     });
   };
 
@@ -46,7 +46,7 @@ export const HeroContent = () => {
       
       {/* 
         =======================================================================
-        🌟 LEFT COLUMN: TYPOGRAPHY, BIO & VIBRANT TAGS
+        🌟 LEFT COLUMN: TEXT, BIO & VIBRANT BADGES
         =======================================================================
       */}
       <div className="h-full w-full flex flex-col gap-6 justify-center m-auto text-start lg:w-[58%] relative z-[60]">
@@ -68,7 +68,7 @@ export const HeroContent = () => {
             </h1>
           </motion.div>
 
-          {/* 🔹 Main Headline: Perfectly Aligned & Spaced */}
+          {/* 🔹 Main Headline */}
           <motion.div
             variants={slideInFromLeft(0.5)}
             className="flex flex-col gap-3 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.12] tracking-tight py-1"
@@ -86,7 +86,7 @@ export const HeroContent = () => {
             </span>
           </motion.div>
 
-          {/* 🔹 Biography with Al-Kabir Highlights */}
+          {/* 🔹 Biography */}
           <motion.p
             variants={slideInFromLeft(0.8)}
             className="text-[15px] sm:text-base md:text-[17px] text-gray-200 mt-4 mb-6 max-w-[700px] leading-relaxed font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
@@ -96,9 +96,9 @@ export const HeroContent = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-500 to-cyan-400 font-extrabold drop-shadow-[0_0_15px_rgba(244,114,182,0.9)] text-base md:text-lg border-b border-pink-500/60 pb-0.5 inline-block">
               Al-Kabir Institute of Management and Technology
             </span>. 
-            I seamlessly blend core hardware electrical logic with advanced software automation. My expertise spans across engineering scalable{" "}
+            I seamlessly blend core hardware electrical logic with advanced software automation. My architecture delivers unbreakable security and zero-latency performance across scalable{" "}
             <strong className="text-purple-400 font-bold">Telegram C2 networks</strong>, 
-            backend architectures, and executing precision{" "}
+            backend infrastructures, and precision{" "}
             <strong className="text-cyan-400 font-bold">Python automation via Termux</strong>.
           </motion.p>
 
@@ -112,7 +112,6 @@ export const HeroContent = () => {
               { name: "Termux Linux OS", color: "from-green-400 to-emerald-500" },
               { name: "Telegram C2 Networks", color: "from-purple-400 to-pink-500" },
               { name: "Electrical Engg.", color: "from-amber-400 to-orange-500" },
-              { name: "System Architecture", color: "from-pink-400 to-cyan-400" },
               { name: "High Performance & Security", color: "from-emerald-400 via-cyan-400 to-blue-500" }
             ].map((tag, idx) => (
               <span 
@@ -153,17 +152,17 @@ export const HeroContent = () => {
 
       {/* 
         =======================================================================
-        🚀 RIGHT COLUMN: VIP INTERACTIVE CYBERPUNK IDENTITY CARD (FAIL-SAFE PHOTO)
+        🚀 RIGHT COLUMN: VIP INTERACTIVE IDENTITY CARD (NO-CORS SECURITY BYPASS)
         =======================================================================
       */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="w-full h-full flex justify-center items-center relative lg:w-[38%] mt-8 lg:mt-0 z-[45]"
       >
-        {/* Glow behind card */}
+        {/* Ambient Glow */}
         <div className="absolute w-[260px] h-[260px] md:w-[420px] md:h-[420px] bg-gradient-to-tr from-cyan-500/40 via-purple-600/40 to-pink-500/40 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-0"></div>
         
-        {/* 🔹 Interactive Profile Card (Touch/Click Controlled) */}
+        {/* 🔹 Interactive Profile Card Container */}
         <div 
           onClick={handleCardInteraction}
           className="relative flex flex-col p-3 rounded-[32px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_55px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none active:scale-[0.98]"
@@ -184,24 +183,21 @@ export const HeroContent = () => {
             ACTIVE
           </div>
 
-          {/* 🔹 Image Container with Fail-Proof Direct Loader */}
+          {/* 🔹 Image Container with Security Bypass */}
           <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* 🖼️ PHOTO FIX: Direct External URL is used here for 100% reliable loading on Vercel deployments. */}
+            {/* 🛡️ Standard HTML Tag with Referrer Bypass Policy */}
             <img
-              src="https://i.ibb.co/6R2594tS/PGPN9ZDW.jpg" // The verified working URL
+              src={imgSrc}
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
               referrerPolicy="no-referrer"
               crossOrigin="anonymous"
-              onLoad={(e) => {
-                const target = e.target as HTMLImageElement;
-                console.log(`Image successfully loaded from: ${target.src}`);
-              }}
-              onError={(e) => {
-                // Robust Fallback: If external URL fails, attempts local small 'n' file name from public folder.
-                const target = e.target as HTMLImageElement;
-                console.warn(`External URL load failed: ${target.src}. Switching to local public path...`);
-                target.src = "/naeem.jpg"; // Small 'n' matching public/naeem.jpg
+              onError={() => {
+                if (imgSrc === PRIMARY_URL) {
+                  setImgSrc(BACKUP_URL_1);
+                } else if (imgSrc === BACKUP_URL_1) {
+                  setImgSrc(BACKUP_URL_2);
+                }
               }}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               draggable={false}
