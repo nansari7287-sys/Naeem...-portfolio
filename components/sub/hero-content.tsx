@@ -1,6 +1,6 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (NEXT.JS TSX - ZERO BUILD ERROR)
+// 👑 VIP ENTERPRISE HERO COMPONENT (NEW CDN URL & 3-CLICK INTERACTIVE MATRIX)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
@@ -14,9 +14,20 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
+// 🛡️ Fail-Safe Image Pool: Naya URL primary (#1) par set hai
+const FALLBACK_IMAGES = [
+  "https://cdn.phototourl.com/member/2026-08-08-21d338cc-d220-44c4-8871-7eb9eec53323.jpg",
+  "/Naeem.jpg",
+  "/naeem.jpg",
+  "https://github.com/nansari7287-sys.png",
+  "https://api.dicebear.com/7.x/bottts/svg?seed=DrakoXNaeem"
+];
+
 export const HeroContent = () => {
   // 🔹 3-Click Interaction State
   const [clickCount, setClickCount] = useState(0);
+  // 🔹 Current image index in fallback pool
+  const [imageIndex, setImageIndex] = useState(0);
 
   const handleCardInteraction = () => {
     setClickCount((prev) => {
@@ -47,18 +58,22 @@ export const HeroContent = () => {
         {/* 🌌 BALANCED DARK GLASS SHIELD */}
         <div className="bg-[#030014]/45 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-purple-500/30 shadow-[0_0_35px_rgba(0,0,0,0.7)] relative z-20">
           
-          {/* 🔹 Top Welcome Badge */}
+          {/* 🔹 Top Welcome Badge with Chino Location */}
           <motion.div
             variants={slideInFromTop}
-            className="py-2 px-4 border border-cyan-500/60 rounded-xl bg-[#030014]/80 shadow-[0_0_20px_rgba(6,182,212,0.5)] flex items-center w-fit mb-5"
+            className="py-2 px-4 border border-cyan-500/60 rounded-xl bg-[#030014]/80 shadow-[0_0_20px_rgba(6,182,212,0.5)] flex items-center w-fit mb-5 flex-wrap gap-2"
           >
-            <SparklesIcon className="text-cyan-400 mr-2.5 h-4 w-4 md:h-5 md:w-5 animate-pulse" />
+            <SparklesIcon className="text-cyan-400 mr-1 h-4 w-4 md:h-5 md:w-5 animate-pulse" />
             <h1 className="text-[13px] md:text-[15px] font-mono tracking-wider uppercase text-gray-100 font-extrabold flex items-center gap-2">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 text-base md:text-lg">
                 𝑵𝒂𝒆𝒆𝒎
               </span> 
               <span className="text-gray-300">// Electrical Engineer & Architect</span>
             </h1>
+            <span className="text-cyan-400/60 hidden sm:inline">|</span>
+            <span className="text-[11px] font-mono text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-500/30">
+              📍 Chino, Jharkhand, India
+            </span>
           </motion.div>
 
           {/* 🔹 Main Headline */}
@@ -79,23 +94,24 @@ export const HeroContent = () => {
             </span>
           </motion.div>
 
-          {/* 🔹 Biography with Colorful Al-Kabir Highlight */}
+          {/* 🔹 Biography with Chino, Jharkhand & Al-Kabir Highlights */}
           <motion.p
             variants={slideInFromLeft(0.8)}
             className="text-[15px] sm:text-base md:text-[17px] text-gray-200 mt-4 mb-6 max-w-[700px] leading-relaxed font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
           >
             I am <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-black text-xl mr-1">𝑵𝒂𝒆𝒆𝒎</strong>, 
-            pursuing a Diploma in <strong className="text-pink-400 font-bold">Electrical Engineering</strong> at{" "}
+            based in <strong className="text-cyan-300 font-bold">Chino, Jharkhand, India</strong>, pursuing a Diploma in{" "}
+            <strong className="text-pink-400 font-bold">Electrical Engg.</strong> at{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-500 to-cyan-400 font-extrabold drop-shadow-[0_0_15px_rgba(244,114,182,0.9)] text-base md:text-lg border-b border-pink-500/60 pb-0.5 inline-block">
               Al-Kabir Institute of Management and Technology
-            </span>{" "}
-            in Jamshedpur. I seamlessly blend core hardware electrical logic with advanced software automation. My focus remains strictly on zero-latency performance and unbreakable security across scalable{" "}
+            </span>. 
+            I seamlessly blend core hardware electrical logic with advanced software automation. My architecture delivers unbreakable security and zero-latency performance across scalable{" "}
             <strong className="text-purple-400 font-bold">Telegram C2 networks</strong>, 
-            backend architectures, and precision{" "}
+            backend infrastructures, and precision{" "}
             <strong className="text-cyan-400 font-bold">Python automation via Termux</strong>.
           </motion.p>
 
-          {/* 🔹 Technical Feature Badges (Updated to Electrical Engg.) */}
+          {/* 🔹 Technical Feature Badges */}
           <motion.div 
             variants={slideInFromLeft(0.9)}
             className="flex flex-wrap gap-2.5 my-2"
@@ -105,7 +121,6 @@ export const HeroContent = () => {
               { name: "Termux Linux OS", color: "from-green-400 to-emerald-500" },
               { name: "Telegram C2 Networks", color: "from-purple-400 to-pink-500" },
               { name: "Electrical Engg.", color: "from-amber-400 to-orange-500" },
-              { name: "System Architecture", color: "from-pink-400 to-cyan-400" },
               { name: "High Performance & Security", color: "from-emerald-400 via-cyan-400 to-blue-500" }
             ].map((tag, idx) => (
               <span 
@@ -177,17 +192,18 @@ export const HeroContent = () => {
             ACTIVE
           </div>
 
-          {/* 🔹 Image Container with Fail-Proof Fallback */}
+          {/* 🔹 Image Container with Smart Multi-Level Fallback */}
           <div className="w-full aspect-[4/5] rounded-[22px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* Image Tag with Direct Local & Remote Fail-Safe */}
+            {/* Fail-Safe Image Loader */}
             <img
-              src="/Naeem.jpg"
+              src={FALLBACK_IMAGES[imageIndex]}
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
-              onError={(e) => {
-                const target = e.currentTarget;
-                if (!target.src.includes("phototourl.com")) {
-                  target.src = "https://cdn.phototourl.com/member/2026-08-08-da5558d4-d1d6-42fd-8af1-321c87b31578.jpg";
+              referrerPolicy="no-referrer"
+              crossOrigin="anonymous"
+              onError={() => {
+                if (imageIndex < FALLBACK_IMAGES.length - 1) {
+                  setImageIndex((prev) => prev + 1);
                 }
               }}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
@@ -231,8 +247,13 @@ export const HeroContent = () => {
                 <div className="h-[2px] w-10 bg-gradient-to-l from-transparent via-cyan-400 to-purple-500"></div>
               </div>
 
-              {/* Helper badge */}
-              <span className="text-[10px] font-mono text-gray-400 mt-2 tracking-widest uppercase">
+              {/* Location Mini-Badge */}
+              <span className="text-[10px] font-mono text-cyan-400/90 mt-1.5 tracking-wider">
+                Chino, Jharkhand, India
+              </span>
+
+              {/* Helper Badge */}
+              <span className="text-[9px] font-mono text-gray-400 mt-1 tracking-widest uppercase">
                 [ Click 3 times to lock ]
               </span>
             </div>
