@@ -5,37 +5,14 @@
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
-// DESCRIPTION:
-// Central database for the entire portfolio application. All project names,
-// personal identifiers, and metadata strictly use the stylish unicode format
-// (𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 / 𝑵𝒂𝒆𝒆𝒎) with zero compile-time errors.
-// ============================================================================
 
-// ----------------------------------------------------------------------------
-// 📦 ICON IMPORTS (Strictly matching used assets)
-// ----------------------------------------------------------------------------
 import { 
-  FaServer, 
-  FaRobot, 
-  FaDatabase, 
-  FaTerminal, 
-  FaCloudUploadAlt,
-  FaGoogle,
-  FaFacebook,
-  FaYoutube,
-  FaTelegramPlane,
-  FaMicrochip
+  FaServer, FaRobot, FaDatabase, FaTerminal, FaCloudUploadAlt,
+  FaGoogle, FaFacebook, FaYoutube, FaTelegramPlane, FaMicrochip
 } from "react-icons/fa";
 
-import {
-  RxDiscordLogo,
-  RxGithubLogo,
-  RxInstagramLogo,
-} from "react-icons/rx";
+import { RxDiscordLogo, RxGithubLogo, RxInstagramLogo } from "react-icons/rx";
 
-// ----------------------------------------------------------------------------
-// 🧱 TYPESCRIPT INTERFACES (Ensures Vercel never throws Type Errors)
-// ----------------------------------------------------------------------------
 export interface ISkill {
   skill_name: string;
   image: string;
@@ -83,7 +60,7 @@ export const PERSONAL_INFO = {
   institute: "Al-Kabir Institute of Management and Technology",
   branch: "Diploma in Electrical Engineering",
   location: "Jamshedpur, Jharkhand, India",
-  profile_photo: "https://github.com/nansari7287-sys.png",
+  profile_photo: "https://cdn.phototourl.com/free/2026-08-08-698674fc-a4d6-434a-bf27-cb80724e2ad1.jpg",
 };
 
 // ----------------------------------------------------------------------------
@@ -108,8 +85,6 @@ export const ABOUT_DATA = {
 // ----------------------------------------------------------------------------
 // 🚀 TECHNICAL ARSENAL: SKILL DATABASES
 // ----------------------------------------------------------------------------
-
-// 🔹 1. CORE SKILLS (Rendered in Skills Component)
 export const SKILL_DATA: ISkill[] = [
   { skill_name: "Python 3", image: "python.png", width: 80, height: 80 },
   { skill_name: "Termux Shell", image: "termux.png", width: 80, height: 80 },
@@ -119,7 +94,6 @@ export const SKILL_DATA: ISkill[] = [
   { skill_name: "Next.js 14", image: "next.png", width: 80, height: 80 },
 ];
 
-// 🔹 2. FRONTEND SKILLS
 export const FRONTEND_SKILL: ISkill[] = [
   { skill_name: "HTML 5", image: "html.png", width: 80, height: 80 },
   { skill_name: "CSS 3", image: "css.png", width: 80, height: 80 },
@@ -131,7 +105,6 @@ export const FRONTEND_SKILL: ISkill[] = [
   { skill_name: "Framer Motion", image: "framer.png", width: 80, height: 80 },
 ];
 
-// 🔹 3. BACKEND SKILLS
 export const BACKEND_SKILL: ISkill[] = [
   { skill_name: "Node.js", image: "node.png", width: 80, height: 80 },
   { skill_name: "Express.js", image: "express.png", width: 80, height: 80 },
@@ -141,7 +114,6 @@ export const BACKEND_SKILL: ISkill[] = [
   { skill_name: "Prisma", image: "prisma.png", width: 70, height: 70 },
 ];
 
-// 🔹 4. FULLSTACK SKILLS
 export const FULLSTACK_SKILL: ISkill[] = [
   { skill_name: "Docker", image: "docker.png", width: 70, height: 70 },
   { skill_name: "React Native", image: "reactnative.png", width: 70, height: 70 },
@@ -149,7 +121,6 @@ export const FULLSTACK_SKILL: ISkill[] = [
   { skill_name: "Tauri", image: "tauri.png", width: 70, height: 70 },
 ];
 
-// 🔹 5. OTHER SKILLS & OSINT TOOLS
 export const OTHER_SKILL: ISkill[] = [
   { skill_name: "Git", image: "gitwhite.png", width: 70, height: 70 },
   { skill_name: "Go", image: "go.png", width: 60, height: 60 },
@@ -161,64 +132,36 @@ export const OTHER_SKILL: ISkill[] = [
 // ----------------------------------------------------------------------------
 export const PROJECTS: IProject[] = [
   {
-    title: "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Elite Portfolio",
-    description: "A highly optimized, Next.js 14 driven enterprise portfolio featuring 60FPS Framer Motion animations and complex glassmorphism UI.",
+    title: "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Elite Space Architecture",
+    description: "A high-performance Next.js 14 portfolio engineered with 60FPS Framer Motion animations, glassmorphism telemetry, and zero-latency routing.",
     image: "/projects/project-1.png",
     link: "https://frexxy-portfolio-3dri.vercel.app/",
   },
   {
-    title: "𝑵𝒂𝒆𝒆𝒎 Enterprise Bot Network",
-    description: "An advanced, asynchronous Telegram C2 network featuring multi-threading execution capabilities and seamless API telemetry.",
+    title: "𝑵𝒂𝒆𝒆𝒎 Enterprise Bot C2 Network",
+    description: "An asynchronous command & control bot infrastructure engineered via Python and deployed for high-speed automated task management.",
     image: "/projects/project-2.png",
     link: "https://github.com/nansari7287-sys",
   },
   {
-    title: "𝑵𝒂𝒆𝒆𝒎 Termux Automation Suite",
-    description: "A centralized suite of custom shell scripts allowing remote server deployment and process management directly from a native Termux environment.",
+    title: "𝑵𝒂𝒆𝒆𝒎 Termux Automation Engine",
+    description: "A centralized terminal scripting suite allowing remote server deployment, live OSINT telemetry, and mobile process execution.",
     image: "/projects/project-3.png",
     link: "https://github.com/nansari7287-sys",
   }
 ];
 
 // ----------------------------------------------------------------------------
-// 🔗 SOCIAL MEDIA & COMMUNICATION ENDPOINTS
+// 🔗 SOCIAL MEDIA & ENDPOINTS
 // ----------------------------------------------------------------------------
 export const SOCIALS: ISocial[] = [
-  {
-    name: "Telegram",
-    icon: FaTelegramPlane,
-    link: "https://t.me/frexxxy",
-  },
-  {
-    name: "YouTube",
-    icon: FaYoutube,
-    link: "https://www.youtube.com/@KHOKHRACOMEDY",
-  },
-  {
-    name: "Google Photos",
-    icon: FaGoogle,
-    link: "https://photos.google.com/",
-  },
-  {
-    name: "Instagram",
-    icon: RxInstagramLogo,
-    link: "https://www.instagram.com/drakoxnaeem",
-  },
-  {
-    name: "Facebook",
-    icon: FaFacebook,
-    link: "https://www.facebook.com/share/1Dyr1kjXoM/",
-  },
-  {
-    name: "GitHub",
-    icon: RxGithubLogo,
-    link: "https://github.com/nansari7287-sys",
-  },
-  {
-    name: "Discord",
-    icon: RxDiscordLogo,
-    link: "https://discord.com/",
-  },
+  { name: "Telegram", icon: FaTelegramPlane, link: "https://t.me/frexxxy" },
+  { name: "YouTube", icon: FaYoutube, link: "https://www.youtube.com/@KHOKHRACOMEDY" },
+  { name: "Google Photos", icon: FaGoogle, link: "https://photos.google.com/" },
+  { name: "Instagram", icon: RxInstagramLogo, link: "https://www.instagram.com/drakoxnaeem" },
+  { name: "Facebook", icon: FaFacebook, link: "https://www.facebook.com/share/1Dyr1kjXoM/" },
+  { name: "GitHub", icon: RxGithubLogo, link: "https://github.com/nansari7287-sys" },
+  { name: "Discord", icon: RxDiscordLogo, link: "https://discord.com/" },
 ];
 
 // ----------------------------------------------------------------------------
@@ -252,7 +195,7 @@ export const FOOTER_DATA: IFooterColumn[] = [
 ];
 
 // ----------------------------------------------------------------------------
-// 🧭 GLOBAL NAVIGATION ROUTING & UTILITY LINKS
+// 🧭 GLOBAL NAVIGATION ROUTING
 // ----------------------------------------------------------------------------
 export const NAV_LINKS: INavLink[] = [
   { title: "About 𝑵𝒂𝒆𝒆𝒎", link: "#about-me" },
