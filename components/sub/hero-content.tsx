@@ -1,12 +1,12 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (ORIGINAL VERIFIED CDN PHOTO REVERTED)
+// 👑 VIP ENTERPRISE HERO COMPONENT (NEW VERIFIED CDN IMAGE ASSET)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
 // DESCRIPTION:
-// - Reverted to the first verified working CDN endpoint.
+// - Direct integration of user-provided member CDN endpoint.
 // - 3-Click Interaction Matrix:
 //     * Click 1: Reveal identity card with colorful nameplate.
 //     * Click 2: Remains open / active.
@@ -187,9 +187,9 @@ export const HeroContent = () => {
           {/* 🔹 Image Container */}
           <div className="w-full aspect-[4/5] rounded-[22px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* Direct First CDN Link Reverted */}
+            {/* Direct Member CDN Link */}
             <img
-              src="https://cdn.phototourl.com/free/2026-08-08-db4671e3-2aca-4d3d-871e-cdf3ffd7e49d.jpg"
+              src="https://cdn.phototourl.com/member/2026-08-08-da5558d4-d1d6-42fd-8af1-321c87b31578.jpg"
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
               referrerPolicy="no-referrer"
               crossOrigin="anonymous"
