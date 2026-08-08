@@ -1,15 +1,15 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (EXACT CASE-SENSITIVE LOCAL ASSET FIX)
+// 👑 VIP ENTERPRISE HERO COMPONENT (FINAL PHOTO & TYPOGRAPHY FIX)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
 // DESCRIPTION:
-// - Direct Local Path: Strictly using lowercase '/naeem.jpg' to match Vercel/Linux 
-//   case-sensitivity rules.
-// - Multi-Asset Fallback Pool: Automatically switches between local filenames.
-// - 3-Click Interaction Matrix: Fully optimized touch/click card reveal engine.
+// - Universal Photo Fix: Direct access to local public/naeem.jpg (case-sensitive)
+//   with automatic onError fallback (no broken boxes).
+// - Interactive 3-Click Matrix: Fully Typesafe reveal/lock engine.
+// - Professional Spacing: Perfected typography alignment and line spacing.
 // ============================================================================
 
 "use client";
@@ -20,26 +20,18 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
-// 🛡️ Local Fail-Safe Pool (Matching exact names from your public folder)
-const LOCAL_IMAGE_POOL = [
-  "/naeem.jpg",
-  "/IMG_20260529_092047_743.jpg",
-  "https://github.com/nansari7287-sys.png"
-];
-
 export const HeroContent = () => {
-  // 🔹 3-Click Interaction State Machine
-  const [clickCount, setClickCount] = useState(0);
-  // 🔹 Image Fallback Index
-  const [imgIndex, setImgIndex] = useState(0);
+  // 🔹 3-Click State Machine for the Identity Card
+  const [clickCount, setClickCount] = useState<number>(0);
 
+  // 🔹 Interaction Handler: Tap 1 opens, Tap 2 maintains, Tap 3 locks back.
   const handleCardInteraction = () => {
     setClickCount((prev) => {
-      const next = prev + 1;
-      if (next >= 3) {
-        return 0; // 3rd click locks the card back
+      const nextCount = prev + 1;
+      if (nextCount >= 3) {
+        return 0; // Locks and resets on the 3rd click
       }
-      return next; // 1 = Open, 2 = Remains Open
+      return nextCount; // 1 = Opened, 2 = Maintains Open State
     });
   };
 
@@ -49,23 +41,23 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 mt-2 md:mt-8 pt-4 w-full z-[50] gap-12 lg:gap-10 max-w-[1600px] mx-auto relative"
+      className="flex flex-col lg:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 mt-4 md:mt-14 pt-8 w-full z-[50] gap-12 lg:gap-8 max-w-[1600px] mx-auto relative"
     >
       
       {/* 
         =======================================================================
-        🌟 LEFT COLUMN: CENTERED SPACING, TYPOGRAPHY & BADGES
+        🌟 LEFT COLUMN: TYPOGRAPHY, BIO & VIBRANT TAGS
         =======================================================================
       */}
       <div className="h-full w-full flex flex-col gap-6 justify-center m-auto text-start lg:w-[58%] relative z-[60]">
         
         {/* 🌌 BALANCED DARK GLASS SHIELD */}
-        <div className="bg-[#030014]/45 backdrop-blur-md p-6 sm:p-10 rounded-3xl border border-purple-500/30 shadow-[0_0_40px_rgba(0,0,0,0.8)] relative z-20 flex flex-col gap-6">
+        <div className="bg-[#030014]/45 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-purple-500/30 shadow-[0_0_35px_rgba(0,0,0,0.7)] relative z-20">
           
           {/* 🔹 Top Welcome Badge */}
           <motion.div
             variants={slideInFromTop}
-            className="py-2.5 px-5 border border-cyan-500/60 rounded-xl bg-[#030014]/80 shadow-[0_0_20px_rgba(6,182,212,0.5)] flex items-center w-fit"
+            className="py-2 px-4 border border-cyan-500/60 rounded-xl bg-[#030014]/80 shadow-[0_0_20px_rgba(6,182,212,0.5)] flex items-center w-fit mb-5"
           >
             <SparklesIcon className="text-cyan-400 mr-2.5 h-4 w-4 md:h-5 md:w-5 animate-pulse" />
             <h1 className="text-[13px] md:text-[15px] font-mono tracking-wider uppercase text-gray-100 font-extrabold flex items-center gap-2">
@@ -76,10 +68,10 @@ export const HeroContent = () => {
             </h1>
           </motion.div>
 
-          {/* 🔹 Main Headline: Perfectly Spaced */}
+          {/* 🔹 Main Headline: Perfectly Spaced & Spaced */}
           <motion.div
             variants={slideInFromLeft(0.5)}
-            className="flex flex-col gap-3 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.12] tracking-tight py-2"
+            className="flex flex-col gap-3 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.12] tracking-tight py-1"
           >
             <span className="drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]">
               Building{" "}
@@ -88,7 +80,7 @@ export const HeroContent = () => {
               </span>{" "}
               with{" "}
               <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 tracking-normal drop-shadow-[0_0_35px_rgba(6,182,212,1)] text-[48px] sm:text-[72px] lg:text-[86px] inline-block py-2">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 tracking-normal drop-shadow-[0_0_30px_rgba(6,182,212,1)] text-[48px] sm:text-[72px] lg:text-[86px] inline-block py-2">
                 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎.
               </span>
             </span>
@@ -97,29 +89,30 @@ export const HeroContent = () => {
           {/* 🔹 Biography with Al-Kabir Highlights */}
           <motion.p
             variants={slideInFromLeft(0.8)}
-            className="text-[15px] sm:text-base md:text-[17px] text-gray-200 leading-relaxed font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] my-2"
+            className="text-[15px] sm:text-base md:text-[17px] text-gray-200 mt-4 mb-6 max-w-[700px] leading-relaxed font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
           >
             I am <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-black text-xl mr-1">𝑵𝒂𝒆𝒆𝒎</strong>, 
             pursuing a Diploma in <strong className="text-pink-400 font-bold">Electrical Engg.</strong> at{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-500 to-cyan-400 font-extrabold drop-shadow-[0_0_15px_rgba(244,114,182,0.9)] text-base md:text-lg border-b border-pink-500/60 pb-0.5 inline-block">
               Al-Kabir Institute of Management and Technology
             </span>. 
-            I seamlessly blend core hardware electrical logic with advanced software automation. My architecture delivers unbreakable security and zero-latency performance across scalable{" "}
+            I seamlessly blend core hardware electrical logic with advanced software automation. My expertise spans across engineering scalable{" "}
             <strong className="text-purple-400 font-bold">Telegram C2 networks</strong>, 
-            backend infrastructures, and precision{" "}
+            backend architectures, and executing precision{" "}
             <strong className="text-cyan-400 font-bold">Python automation via Termux</strong>.
           </motion.p>
 
           {/* 🔹 Technical Feature Badges */}
           <motion.div 
             variants={slideInFromLeft(0.9)}
-            className="flex flex-wrap gap-3 my-1"
+            className="flex flex-wrap gap-2.5 my-2"
           >
             {[
               { name: "Python 3 Automation", color: "from-cyan-400 to-blue-500" },
               { name: "Termux Linux OS", color: "from-green-400 to-emerald-500" },
               { name: "Telegram C2 Networks", color: "from-purple-400 to-pink-500" },
               { name: "Electrical Engg.", color: "from-amber-400 to-orange-500" },
+              { name: "System Architecture", color: "from-pink-400 to-cyan-400" },
               { name: "High Performance & Security", color: "from-emerald-400 via-cyan-400 to-blue-500" }
             ].map((tag, idx) => (
               <span 
@@ -135,7 +128,7 @@ export const HeroContent = () => {
           {/* 🔹 Action Buttons */}
           <motion.div
             variants={slideInFromLeft(1)}
-            className="flex flex-row flex-wrap items-center gap-5 mt-4"
+            className="flex flex-row flex-wrap items-center gap-4 mt-7"
           >
             <Link
               href="#projects"
@@ -160,17 +153,17 @@ export const HeroContent = () => {
 
       {/* 
         =======================================================================
-        🚀 RIGHT COLUMN: VIP INTERACTIVE IDENTITY CARD (LOCAL ASSET)
+        🚀 RIGHT COLUMN: VIP INTERACTIVE CYBERPUNK IDENTITY CARD (LOCAL PHOTO)
         =======================================================================
       */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="w-full h-full flex justify-center items-center relative lg:w-[38%] mt-8 lg:mt-0 z-[45]"
       >
-        {/* Ambient Glow */}
+        {/* Glow behind card */}
         <div className="absolute w-[260px] h-[260px] md:w-[420px] md:h-[420px] bg-gradient-to-tr from-cyan-500/40 via-purple-600/40 to-pink-500/40 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-0"></div>
         
-        {/* 🔹 Interactive Profile Card Container */}
+        {/* 🔹 Interactive Profile Card (Touch/Click Controlled) */}
         <div 
           onClick={handleCardInteraction}
           className="relative flex flex-col p-3 rounded-[32px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_55px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none active:scale-[0.98]"
@@ -191,17 +184,24 @@ export const HeroContent = () => {
             ACTIVE
           </div>
 
-          {/* 🔹 Image Container */}
+          {/* 🔹 Image Container with Fail-Proof Direct Loader */}
           <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* Direct Local Image with Auto-Fallback Pool */}
+            {/* Direct HTML Tag with direct local path and onError handler */}
             <img
-              src={LOCAL_IMAGE_POOL[imgIndex]}
+              src="/naeem.jpg" // Local direct path from your verified screenshot
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
-              onError={() => {
-                if (imgIndex < LOCAL_IMAGE_POOL.length - 1) {
-                  setImgIndex((prev) => prev + 1);
-                }
+              referrerPolicy="no-referrer"
+              crossOrigin="anonymous"
+              onLoad={(e) => {
+                const target = e.target as HTMLImageElement;
+                console.log(`Image verified loaded from: ${target.src}`);
+              }}
+              onError={(e) => {
+                // If local /naeem.jpg fails, 자동으로 stable remote fallback try karega
+                const target = e.target as HTMLImageElement;
+                console.warn(`Local photo load failed: ${target.src}. Trying backup CDN...`);
+                target.src = "https://cdn.phototourl.com/member/2026-08-08-da5558d4-d1d6-42fd-8af1-321c87b31578.jpg";
               }}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               draggable={false}
