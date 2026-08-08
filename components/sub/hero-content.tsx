@@ -1,6 +1,6 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (LOCATION REMOVED & PHOTO STREAM FIXED)
+// 👑 VIP ENTERPRISE HERO COMPONENT (IMGBB DIRECT LINK & PERFECT SPACING)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
@@ -14,18 +14,20 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
+// 🔹 ImgBB Verified Direct Image Link
+const PRIMARY_PHOTO = "https://i.ibb.co/6R2594tS/PGPN9ZDW.jpg";
+
 export const HeroContent = () => {
-  // 🔹 3-Click State Machine
+  // 🔹 3-Click State Machine (1: Open, 2: Stay Open, 3: Lock Back)
   const [clickCount, setClickCount] = useState(0);
-  const [imgError, setImgError] = useState(false);
 
   const handleCardInteraction = () => {
     setClickCount((prev) => {
       const next = prev + 1;
       if (next >= 3) {
-        return 0; // 3rd click locks the card
+        return 0; // 3rd click locks the card back
       }
-      return next; // 1 = Open, 2 = Open
+      return next;
     });
   };
 
@@ -35,23 +37,23 @@ export const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 mt-4 md:mt-14 pt-8 w-full z-[50] gap-12 lg:gap-8 max-w-[1600px] mx-auto relative"
+      className="flex flex-col lg:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 mt-2 md:mt-8 pt-4 w-full z-[50] gap-12 lg:gap-10 max-w-[1600px] mx-auto relative"
     >
       
       {/* 
         =======================================================================
-        🌟 LEFT COLUMN: TEXT, BIO & VIBRANT BADGES
+        🌟 LEFT COLUMN: CENTERED SPACING, TYPOGRAPHY & BADGES
         =======================================================================
       */}
       <div className="h-full w-full flex flex-col gap-6 justify-center m-auto text-start lg:w-[58%] relative z-[60]">
         
-        {/* 🌌 BALANCED DARK GLASS SHIELD */}
-        <div className="bg-[#030014]/45 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-purple-500/30 shadow-[0_0_35px_rgba(0,0,0,0.7)] relative z-20">
+        {/* 🌌 BALANCED DARK GLASS SHIELD WITH CLEAN PADDING */}
+        <div className="bg-[#030014]/45 backdrop-blur-md p-6 sm:p-10 rounded-3xl border border-purple-500/30 shadow-[0_0_40px_rgba(0,0,0,0.8)] relative z-20 flex flex-col gap-6">
           
-          {/* 🔹 Top Welcome Badge (Location removed) */}
+          {/* 🔹 Top Welcome Badge */}
           <motion.div
             variants={slideInFromTop}
-            className="py-2 px-4 border border-cyan-500/60 rounded-xl bg-[#030014]/80 shadow-[0_0_20px_rgba(6,182,212,0.5)] flex items-center w-fit mb-5"
+            className="py-2.5 px-5 border border-cyan-500/60 rounded-xl bg-[#030014]/80 shadow-[0_0_20px_rgba(6,182,212,0.5)] flex items-center w-fit"
           >
             <SparklesIcon className="text-cyan-400 mr-2.5 h-4 w-4 md:h-5 md:w-5 animate-pulse" />
             <h1 className="text-[13px] md:text-[15px] font-mono tracking-wider uppercase text-gray-100 font-extrabold flex items-center gap-2">
@@ -62,10 +64,10 @@ export const HeroContent = () => {
             </h1>
           </motion.div>
 
-          {/* 🔹 Main Headline */}
+          {/* 🔹 Main Headline: Perfectly Centered & Spaced */}
           <motion.div
             variants={slideInFromLeft(0.5)}
-            className="flex flex-col gap-2 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.1] tracking-tight"
+            className="flex flex-col gap-3 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.12] tracking-tight py-2"
           >
             <span className="drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]">
               Building{" "}
@@ -74,7 +76,7 @@ export const HeroContent = () => {
               </span>{" "}
               with{" "}
               <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 tracking-normal drop-shadow-[0_0_30px_rgba(6,182,212,1)] text-[46px] sm:text-[70px] lg:text-[84px] inline-block py-1">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 tracking-normal drop-shadow-[0_0_35px_rgba(6,182,212,1)] text-[48px] sm:text-[72px] lg:text-[86px] inline-block py-2">
                 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎.
               </span>
             </span>
@@ -83,7 +85,7 @@ export const HeroContent = () => {
           {/* 🔹 Biography with Al-Kabir Highlights */}
           <motion.p
             variants={slideInFromLeft(0.8)}
-            className="text-[15px] sm:text-base md:text-[17px] text-gray-200 mt-4 mb-6 max-w-[700px] leading-relaxed font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
+            className="text-[15px] sm:text-base md:text-[17px] text-gray-200 leading-relaxed font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] my-2"
           >
             I am <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-black text-xl mr-1">𝑵𝒂𝒆𝒆𝒎</strong>, 
             pursuing a Diploma in <strong className="text-pink-400 font-bold">Electrical Engg.</strong> at{" "}
@@ -99,7 +101,7 @@ export const HeroContent = () => {
           {/* 🔹 Technical Feature Badges */}
           <motion.div 
             variants={slideInFromLeft(0.9)}
-            className="flex flex-wrap gap-2.5 my-2"
+            className="flex flex-wrap gap-3 my-1"
           >
             {[
               { name: "Python 3 Automation", color: "from-cyan-400 to-blue-500" },
@@ -121,7 +123,7 @@ export const HeroContent = () => {
           {/* 🔹 Action Buttons */}
           <motion.div
             variants={slideInFromLeft(1)}
-            className="flex flex-row flex-wrap items-center gap-4 mt-7"
+            className="flex flex-row flex-wrap items-center gap-5 mt-4"
           >
             <Link
               href="#projects"
@@ -146,7 +148,7 @@ export const HeroContent = () => {
 
       {/* 
         =======================================================================
-        🚀 RIGHT COLUMN: VIP INTERACTIVE IDENTITY CARD (3-CLICK CYCLE)
+        🚀 RIGHT COLUMN: VIP INTERACTIVE IDENTITY CARD (IMGBB PHOTO)
         =======================================================================
       */}
       <motion.div
@@ -159,7 +161,7 @@ export const HeroContent = () => {
         {/* 🔹 Interactive Profile Card Container */}
         <div 
           onClick={handleCardInteraction}
-          className="relative flex flex-col p-2.5 rounded-[30px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_50px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none active:scale-[0.98]"
+          className="relative flex flex-col p-3 rounded-[32px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_55px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none active:scale-[0.98]"
         >
           
           {/* Status Badges */}
@@ -177,13 +179,15 @@ export const HeroContent = () => {
             ACTIVE
           </div>
 
-          {/* 🔹 Image Container with Direct Fail-Safe Loader */}
-          <div className="w-full aspect-[4/5] rounded-[22px] overflow-hidden border border-white/20 relative bg-[#090a16]">
+          {/* 🔹 Image Container */}
+          <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
+            {/* Direct ImgBB Image URL */}
             <img
-              src={!imgError ? "https://github.com/nansari7287-sys.png" : "/Naeem.jpg"}
-              alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Identity"
-              onError={() => setImgError(true)}
+              src={PRIMARY_PHOTO}
+              alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
+              referrerPolicy="no-referrer"
+              crossOrigin="anonymous"
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               draggable={false}
             />
@@ -225,14 +229,14 @@ export const HeroContent = () => {
                 <div className="h-[2px] w-10 bg-gradient-to-l from-transparent via-cyan-400 to-purple-500"></div>
               </div>
 
-              {/* Helper Badge */}
-              <span className="text-[9px] font-mono text-gray-400 mt-2 tracking-widest uppercase">
+              {/* Helper badge */}
+              <span className="text-[10px] font-mono text-gray-400 mt-2 tracking-widest uppercase">
                 [ Click 3 times to lock ]
               </span>
             </div>
 
             {/* Inner Border Glow */}
-            <div className="absolute inset-0 border-[2px] border-transparent group-hover:border-cyan-500/60 rounded-[22px] transition-colors duration-500 z-40 pointer-events-none"></div>
+            <div className="absolute inset-0 border-[2px] border-transparent group-hover:border-cyan-500/60 rounded-[24px] transition-colors duration-500 z-40 pointer-events-none"></div>
           </div>
         </div>
       </motion.div>
