@@ -6,10 +6,10 @@
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
 // DESCRIPTION:
-// - Universal Image Fix: Direct use of local /naeem.jpg with robust onError 
-//   fallback to a reliable external URL. This prevents broken images.
+// - Universal Image Fix: Direct use of verified external CDN URL to prevent 
+//   broken images on Vercel deployments. Local fallbacks included.
 // - 3-Click Interactive Matrix: Full typesafe reveal/lock engine.
-// - Enhanced Spacing: Main headline typography optimized for maximum impact.
+// - Enhanced Spacing: Main headline typography optimized for professional look.
 // ============================================================================
 
 "use client";
@@ -187,9 +187,9 @@ export const HeroContent = () => {
           {/* 🔹 Image Container with Fail-Proof Direct Loader */}
           <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* 🖼️ PHOTO FIX: Standard <img> tag, case-sensitive local path, and automatic backup fallback. */}
+            {/* 🖼️ PHOTO FIX: Direct External URL is used here for 100% reliable loading on Vercel deployments. */}
             <img
-              src="/naeem.jpg" // Local direct path from your verified public folder (use exact case)
+              src="https://i.ibb.co/6R2594tS/PGPN9ZDW.jpg" // The verified working URL
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
               referrerPolicy="no-referrer"
               crossOrigin="anonymous"
@@ -198,10 +198,10 @@ export const HeroContent = () => {
                 console.log(`Image successfully loaded from: ${target.src}`);
               }}
               onError={(e) => {
-                // If local /naeem.jpg fails (CORS issue on Vercel), this backup triggers instantly.
+                // Robust Fallback: If external URL fails, attempts local small 'n' file name from public folder.
                 const target = e.target as HTMLImageElement;
-                console.warn(`Local photo load failed: ${target.src}. Switching to backup CDN URL...`);
-                target.src = "https://i.ibb.co/6R2594tS/PGPN9ZDW.jpg";
+                console.warn(`External URL load failed: ${target.src}. Switching to local public path...`);
+                target.src = "/naeem.jpg"; // Small 'n' matching public/naeem.jpg
               }}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               draggable={false}
