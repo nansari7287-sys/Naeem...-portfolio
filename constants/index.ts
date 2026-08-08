@@ -1,8 +1,8 @@
 // ============================================================================
 // 📁 constants/index.ts
-// 👑 ULTIMATE ENTERPRISE DATA HUB & ZERO-ERROR CONFIGURATION MATRIX
+// Portfolio Configuration & Data Definitions
 // ============================================================================
-// AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
+// AUTHOR: Naeem (DrakoXNaeem)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
 
@@ -48,42 +48,43 @@ export interface IFooterColumn {
 }
 
 // ----------------------------------------------------------------------------
-// 🧑‍💻 PERSONAL IDENTIFICATION & BRANDING CORE
+// Personal Identification & Branding
 // ----------------------------------------------------------------------------
 export const PERSONAL_INFO = {
-  name: "𝑵𝒂𝒆𝒆𝒎",
-  brand_name: "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎",
-  handle: "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎",
+  name: "Naeem Ansari",
+  brand_name: "DrakoXNaeem",
+  handle: "@DrakoXNaeem",
   email: "nansari7287@gmail.com",
   role: "Electrical Engineer & Bot Architect",
-  tagline: "Bridging core hardware electrical logic with advanced Python automation, Termux environments, and scalable Telegram C2 networks.",
+  tagline: "Bridging core hardware electrical logic with advanced Python automation, Termux environments, and scalable network architectures.",
   institute: "Al-Kabir Institute of Management and Technology",
   branch: "Diploma in Electrical Engineering",
-  location: "Chino, Jharkhand, India",
-  profile_photo: "https://github.com/nansari7287-sys.png",
+  location: "Jharkhand, India",
+  // Note: Ensure naeem.jpg is placed inside the 'public' folder of your Next.js project
+  profile_photo: "/naeem.jpg", 
 };
 
 // ----------------------------------------------------------------------------
-// 📖 BIOGRAPHY & ARCHITECTURE OVERVIEW
+// Biography & Architecture Overview
 // ----------------------------------------------------------------------------
 export const ABOUT_DATA = {
-  heading: "Bridging Electrical Hardware Logic with Cloud Software Automation",
-  subheading: "Electrical Engineering Scholar & Automation Expert",
+  heading: "Bridging Electrical Hardware Logic with Software Automation",
+  subheading: "Electrical Engineering Scholar & Automation Specialist",
   paragraphs: [
-    "I am 𝑵𝒂𝒆𝒆𝒎 (known globally as 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎), an analytical systems architect pursuing Electrical Engineering at Al-Kabir Institute of Management and Technology.",
-    "I combine core electrical engineering logic with advanced asynchronous Python automation, native Linux environments, and Telegram C2 networks to build resilient digital infrastructures.",
-    "Whether executing precision deployment scripts natively via Termux or managing cloud environments, my focus remains strictly on zero-latency performance and unbreakable security."
+    "I am Naeem (known as DrakoXNaeem), an analytical systems architect pursuing Electrical Engineering at Al-Kabir Institute of Management and Technology.",
+    "I combine core electrical engineering logic with advanced asynchronous Python automation, native Linux environments, and distributed networks to build resilient digital infrastructures.",
+    "Whether executing deployment scripts natively via Termux or managing cloud environments, my focus remains strictly on performance, optimization, and security."
   ],
   stats: [
     { label: "Systems Engineered", value: "35+" },
-    { label: "Bot Networks Active", value: "15+" },
-    { label: "Termux Scripts", value: "50+" },
+    { label: "Active Bot Networks", value: "15+" },
+    { label: "Automation Scripts", value: "50+" },
     { label: "Core Discipline", value: "Electrical Engg." },
   ]
 };
 
 // ----------------------------------------------------------------------------
-// 🚀 TECHNICAL ARSENAL: SKILL DATABASES
+// Technical Skills Database
 // ----------------------------------------------------------------------------
 export const SKILL_DATA: ISkill[] = [
   { skill_name: "Python 3", image: "python.png", width: 80, height: 80 },
@@ -128,79 +129,75 @@ export const OTHER_SKILL: ISkill[] = [
 ];
 
 // ----------------------------------------------------------------------------
-// 🏆 ENGINEERED PROJECTS SHOWCASE
+// Engineered Projects Showcase
 // ----------------------------------------------------------------------------
 export const PROJECTS: IProject[] = [
   {
-    title: "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Elite Space Architecture",
-    description: "A high-performance Next.js 14 portfolio engineered with 60FPS Framer Motion animations, glassmorphism telemetry, and zero-latency routing.",
+    title: "DrakoXNaeem Portfolio Architecture",
+    description: "A high-performance Next.js 14 portfolio engineered with 60FPS Framer Motion animations, glassmorphism UI, and optimized routing.",
     image: "/projects/project-1.png",
     link: "https://frexxy-portfolio-3dri.vercel.app/",
   },
   {
-    title: "𝑵𝒂𝒆𝒆𝒎 Enterprise Bot C2 Network",
+    title: "Enterprise Bot Control Network",
     description: "An asynchronous command & control bot infrastructure engineered via Python and deployed for high-speed automated task management.",
     image: "/projects/project-2.png",
     link: "https://github.com/nansari7287-sys",
   },
   {
-    title: "𝑵𝒂𝒆𝒆𝒎 Termux Automation Engine",
-    description: "A centralized terminal scripting suite allowing remote server deployment, live OSINT telemetry, and mobile process execution.",
+    title: "Termux Automation Engine",
+    description: "A centralized terminal scripting suite allowing remote server deployment, OSINT data gathering, and mobile process execution.",
     image: "/projects/project-3.png",
     link: "https://github.com/nansari7287-sys",
   }
 ];
 
 // ----------------------------------------------------------------------------
-// 🔗 SOCIAL MEDIA & ENDPOINTS
+// Social Media & Endpoints
 // ----------------------------------------------------------------------------
 export const SOCIALS: ISocial[] = [
+  { name: "GitHub", icon: RxGithubLogo, link: "https://github.com/nansari7287-sys" },
   { name: "Telegram", icon: FaTelegramPlane, link: "https://t.me/frexxxy" },
   { name: "YouTube", icon: FaYoutube, link: "https://www.youtube.com/@KHOKHRACOMEDY" },
-  { name: "Google Photos", icon: FaGoogle, link: "https://photos.google.com/" },
   { name: "Instagram", icon: RxInstagramLogo, link: "https://www.instagram.com/drakoxnaeem" },
-  { name: "Facebook", icon: FaFacebook, link: "https://www.facebook.com/share/1Dyr1kjXoM/" },
-  { name: "GitHub", icon: RxGithubLogo, link: "https://github.com/nansari7287-sys" },
   { name: "Discord", icon: RxDiscordLogo, link: "https://discord.com/" },
 ];
 
 // ----------------------------------------------------------------------------
-// 📜 FOOTER NAVIGATION MAP
+// Footer Navigation Map
 // ----------------------------------------------------------------------------
 export const FOOTER_DATA: IFooterColumn[] = [
   {
-    title: "Community Hub",
+    title: "Community & Network",
     data: [
-      { name: "Telegram Network", icon: FaTelegramPlane, link: "https://t.me/frexxxy" },
       { name: "GitHub Repositories", icon: RxGithubLogo, link: "https://github.com/nansari7287-sys" },
+      { name: "Telegram Channel", icon: FaTelegramPlane, link: "https://t.me/frexxxy" },
       { name: "Discord Server", icon: RxDiscordLogo, link: "https://discord.com/" },
     ],
   },
   {
-    title: "Media & Socials",
+    title: "Media",
     data: [
       { name: "YouTube Channel", icon: FaYoutube, link: "https://www.youtube.com/@KHOKHRACOMEDY" },
-      { name: "Instagram Portfolio", icon: RxInstagramLogo, link: "https://www.instagram.com/drakoxnaeem" },
-      { name: "Facebook Profile", icon: FaFacebook, link: "https://www.facebook.com/share/1Dyr1kjXoM/" },
+      { name: "Instagram Profile", icon: RxInstagramLogo, link: "https://www.instagram.com/drakoxnaeem" },
     ],
   },
   {
-    title: "Systems Info",
+    title: "Contact & Info",
     data: [
       { name: "Al-Kabir Institute", icon: null, link: "#" },
-      { name: "Google Photos Library", icon: FaGoogle, link: "https://photos.google.com/" },
-      { name: "Contact 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎", icon: null, link: "mailto:nansari7287@gmail.com" },
+      { name: "Email Naeem", icon: null, link: "mailto:nansari7287@gmail.com" },
     ],
   },
 ];
 
 // ----------------------------------------------------------------------------
-// 🧭 GLOBAL NAVIGATION ROUTING
+// Global Navigation Routing
 // ----------------------------------------------------------------------------
 export const NAV_LINKS: INavLink[] = [
-  { title: "About 𝑵𝒂𝒆𝒆𝒎", link: "#about-me" },
-  { title: "Technical Arsenal", link: "#skills" },
-  { title: "Engineered Systems", link: "#projects" },
+  { title: "About", link: "#about-me" },
+  { title: "Skills", link: "#skills" },
+  { title: "Projects", link: "#projects" },
 ];
 
 export const LINKS = {
