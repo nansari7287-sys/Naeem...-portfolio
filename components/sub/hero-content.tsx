@@ -1,15 +1,15 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (FINAL PHOTO & TYPOGRAPHY FIX)
+// 👑 VIP ENTERPRISE HERO COMPONENT (FAIL-SAFE IMAGE & PERFECTED SPACING)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
 // DESCRIPTION:
-// - Universal Photo Fix: Direct access to local public/naeem.jpg (case-sensitive)
-//   with automatic onError fallback (no broken boxes).
-// - Interactive 3-Click Matrix: Fully Typesafe reveal/lock engine.
-// - Professional Spacing: Perfected typography alignment and line spacing.
+// - Universal Image Fix: Direct use of local /naeem.jpg with robust onError 
+//   fallback to a reliable external URL. This prevents broken images.
+// - 3-Click Interactive Matrix: Full typesafe reveal/lock engine.
+// - Enhanced Spacing: Main headline typography optimized for maximum impact.
 // ============================================================================
 
 "use client";
@@ -21,10 +21,10 @@ import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
 export const HeroContent = () => {
-  // 🔹 3-Click State Machine for the Identity Card
+  // 🔹 State controlling the 3-click reveal / lock cycle of the Identity Card
   const [clickCount, setClickCount] = useState<number>(0);
 
-  // 🔹 Interaction Handler: Tap 1 opens, Tap 2 maintains, Tap 3 locks back.
+  // 🔹 Interactivity Handler: Tap 1 opens, Tap 2 maintains, Tap 3 locks back.
   const handleCardInteraction = () => {
     setClickCount((prev) => {
       const nextCount = prev + 1;
@@ -68,7 +68,7 @@ export const HeroContent = () => {
             </h1>
           </motion.div>
 
-          {/* 🔹 Main Headline: Perfectly Spaced & Spaced */}
+          {/* 🔹 Main Headline: Perfectly Aligned & Spaced */}
           <motion.div
             variants={slideInFromLeft(0.5)}
             className="flex flex-col gap-3 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.12] tracking-tight py-1"
@@ -153,7 +153,7 @@ export const HeroContent = () => {
 
       {/* 
         =======================================================================
-        🚀 RIGHT COLUMN: VIP INTERACTIVE CYBERPUNK IDENTITY CARD (LOCAL PHOTO)
+        🚀 RIGHT COLUMN: VIP INTERACTIVE CYBERPUNK IDENTITY CARD (FAIL-SAFE PHOTO)
         =======================================================================
       */}
       <motion.div
@@ -187,21 +187,21 @@ export const HeroContent = () => {
           {/* 🔹 Image Container with Fail-Proof Direct Loader */}
           <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* Direct HTML Tag with direct local path and onError handler */}
+            {/* 🖼️ PHOTO FIX: Standard <img> tag, case-sensitive local path, and automatic backup fallback. */}
             <img
-              src="/naeem.jpg" // Local direct path from your verified screenshot
+              src="/naeem.jpg" // Local direct path from your verified public folder (use exact case)
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
               referrerPolicy="no-referrer"
               crossOrigin="anonymous"
               onLoad={(e) => {
                 const target = e.target as HTMLImageElement;
-                console.log(`Image verified loaded from: ${target.src}`);
+                console.log(`Image successfully loaded from: ${target.src}`);
               }}
               onError={(e) => {
-                // If local /naeem.jpg fails, 자동으로 stable remote fallback try karega
+                // If local /naeem.jpg fails (CORS issue on Vercel), this backup triggers instantly.
                 const target = e.target as HTMLImageElement;
-                console.warn(`Local photo load failed: ${target.src}. Trying backup CDN...`);
-                target.src = "https://cdn.phototourl.com/member/2026-08-08-da5558d4-d1d6-42fd-8af1-321c87b31578.jpg";
+                console.warn(`Local photo load failed: ${target.src}. Switching to backup CDN URL...`);
+                target.src = "https://i.ibb.co/6R2594tS/PGPN9ZDW.jpg";
               }}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               draggable={false}
