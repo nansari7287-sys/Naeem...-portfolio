@@ -1,6 +1,6 @@
 // ============================================================================
 // 📁 components/main/footer.tsx
-// 👑 VIP ENTERPRISE FOOTER ARCHITECTURE (CHINO LOCATION FIXED)
+// 👑 VIP ENTERPRISE FOOTER ARCHITECTURE (CHINO LOCATION FIXED SINGLE SOURCE)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
@@ -19,7 +19,7 @@ export const Footer = () => {
   return (
     <footer className="w-full bg-[#030014]/85 backdrop-blur-2xl text-gray-200 border-t border-purple-500/30 relative z-50 overflow-hidden pt-16 pb-8 mt-20 shadow-[0_-10px_40px_rgba(112,66,248,0.15)]">
       
-      {/* 🌌 Top Neon Gradient Divider */}
+      {/* 🌌 Top Neon Gradient Divider Line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[2px] bg-gradient-to-r from-transparent via-cyan-400 via-purple-500 to-transparent shadow-[0_0_20px_rgba(6,182,212,0.8)] opacity-80" />
 
       <div className="w-full max-w-[1500px] flex flex-col items-center justify-center m-auto px-6 md:px-12 lg:px-16">
@@ -27,21 +27,22 @@ export const Footer = () => {
         {/* 🏢 FOOTER TOP SECTION */}
         <div className="w-full flex flex-col lg:flex-row items-start justify-between flex-wrap gap-12 pb-14 border-b border-white/10">
           
-          {/* 🔹 Brand & Location Column */}
-          <div className="min-w-[280px] max-w-[380px] flex flex-col items-start justify-start">
-            <h3 className="font-extrabold text-[26px] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 mb-4 tracking-wider flex items-center gap-2.5 drop-shadow-[0_0_20px_rgba(6,182,212,0.6)]">
+          {/* 🔹 Brand, Tagline & Location (Single Source of Truth) */}
+          <div className="min-w-[280px] max-w-[380px] flex flex-col items-start justify-start gap-4">
+            <h3 className="font-extrabold text-[26px] text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 mb-2 tracking-wider flex items-center gap-2.5 drop-shadow-[0_0_20px_rgba(6,182,212,0.6)]">
               <FaTerminal className="text-cyan-400 text-xl animate-pulse" />
               {PERSONAL_INFO?.brand_name || "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎"}
             </h3>
             
-            <p className="text-[14px] text-gray-400 leading-relaxed font-light mb-6">
+            <p className="text-[14px] text-gray-400 leading-relaxed font-light">
               {PERSONAL_INFO?.tagline || "Engineering scalable Telegram C2 networks, Python automation, and modern web architectures."}
             </p>
             
-            {/* Status Badges */}
-            <div className="flex flex-col gap-2.5 w-full">
+            {/* Status Badges with Central Chino Location */}
+            <div className="flex flex-col gap-2.5 w-full mt-3">
               <div className="flex items-center gap-2.5 text-[12px] font-mono text-cyan-300 bg-cyan-500/10 px-3.5 py-1.5 rounded-full border border-cyan-500/20 w-fit">
                 <FaMapMarkerAlt className="text-cyan-400" />
+                {/* Fixed central location here only */}
                 <span>Chino, Jharkhand, India</span>
               </div>
               
@@ -89,9 +90,9 @@ export const Footer = () => {
         </div>
 
         {/* ⚖️ FOOTER BOTTOM SECTION */}
-        <div className="w-full flex flex-col md:flex-row items-center justify-between mt-8 text-[13px] text-gray-500 font-mono gap-4">
+        <div className="w-full flex flex-col md:flex-row items-center justify-between mt-8 text-[13px] text-gray-500 font-mono gap-4 flex-wrap">
           
-          <div className="text-center md:text-left text-gray-400">
+          <div className="text-center md:text-left text-gray-400 flex items-center gap-1.5 flex-wrap justify-center">
             &copy; {currentYear}{" "}
             <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 text-[16px] mx-1">
               𝑵𝒂𝒆𝒆𝒎
