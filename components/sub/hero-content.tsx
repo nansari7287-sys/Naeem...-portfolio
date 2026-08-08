@@ -1,17 +1,9 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (LOCAL /Naeem.jpg ASSET INTEGRATION)
+// 👑 VIP ENTERPRISE HERO COMPONENT (NEXT.JS TSX - ZERO BUILD ERROR)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
-// ============================================================================
-// DESCRIPTION:
-// - Direct Local Asset: Loads /Naeem.jpg from the public folder (100% offline & fast).
-// - 3-Click Interaction Matrix:
-//     * Click 1: Reveal photo + Colorful Glowing Nameplate.
-//     * Click 2: Remains open / active.
-//     * Click 3: Locks back to initial Cyberpunk cover.
-// - Strictly Enforced Fonts: '𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎' and '𝑵𝒂𝒆𝒆𝒎'.
 // ============================================================================
 
 "use client";
@@ -23,16 +15,16 @@ import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
 export const HeroContent = () => {
-  // 🔹 State controlling the 3-click reveal / lock cycle
+  // 🔹 3-Click Interaction State
   const [clickCount, setClickCount] = useState(0);
 
   const handleCardInteraction = () => {
     setClickCount((prev) => {
       const next = prev + 1;
       if (next >= 3) {
-        return 0; // 3rd click closes/locks it
+        return 0; // 3rd click locks the card back
       }
-      return next; // 1 = Revealed, 2 = Remains Revealed
+      return next; // 1 = Open, 2 = Remains Open
     });
   };
 
@@ -53,7 +45,7 @@ export const HeroContent = () => {
       <div className="h-full w-full flex flex-col gap-6 justify-center m-auto text-start lg:w-[58%] relative z-[60]">
         
         {/* 🌌 BALANCED DARK GLASS SHIELD */}
-        <div className="bg-[#030014]/40 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-purple-500/30 shadow-[0_0_35px_rgba(0,0,0,0.7)] relative z-20">
+        <div className="bg-[#030014]/45 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-purple-500/30 shadow-[0_0_35px_rgba(0,0,0,0.7)] relative z-20">
           
           {/* 🔹 Top Welcome Badge */}
           <motion.div
@@ -69,7 +61,7 @@ export const HeroContent = () => {
             </h1>
           </motion.div>
 
-          {/* 🔹 Main Headline: Ultra Glowing Drop Shadows */}
+          {/* 🔹 Main Headline */}
           <motion.div
             variants={slideInFromLeft(0.5)}
             className="flex flex-col gap-2 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.1] tracking-tight"
@@ -97,13 +89,13 @@ export const HeroContent = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-500 to-cyan-400 font-extrabold drop-shadow-[0_0_15px_rgba(244,114,182,0.9)] text-base md:text-lg border-b border-pink-500/60 pb-0.5 inline-block">
               Al-Kabir Institute of Management and Technology
             </span>{" "}
-            in Jamshedpur. I seamlessly blend core hardware electrical logic with advanced software automation. My expertise spans across engineering scalable{" "}
+            in Jamshedpur. I seamlessly blend core hardware electrical logic with advanced software automation. My focus remains strictly on zero-latency performance and unbreakable security across scalable{" "}
             <strong className="text-purple-400 font-bold">Telegram C2 networks</strong>, 
-            backend architectures, and executing precision{" "}
+            backend architectures, and precision{" "}
             <strong className="text-cyan-400 font-bold">Python automation via Termux</strong>.
           </motion.p>
 
-          {/* 🔹 Technical Feature Badges */}
+          {/* 🔹 Technical Feature Badges (Updated to Electrical Engg.) */}
           <motion.div 
             variants={slideInFromLeft(0.9)}
             className="flex flex-wrap gap-2.5 my-2"
@@ -112,8 +104,9 @@ export const HeroContent = () => {
               { name: "Python 3 Automation", color: "from-cyan-400 to-blue-500" },
               { name: "Termux Linux OS", color: "from-green-400 to-emerald-500" },
               { name: "Telegram C2 Networks", color: "from-purple-400 to-pink-500" },
-              { name: "Electrical Logic", color: "from-amber-400 to-orange-500" },
-              { name: "System Architecture", color: "from-pink-400 to-cyan-400" }
+              { name: "Electrical Engg.", color: "from-amber-400 to-orange-500" },
+              { name: "System Architecture", color: "from-pink-400 to-cyan-400" },
+              { name: "High Performance & Security", color: "from-emerald-400 via-cyan-400 to-blue-500" }
             ].map((tag, idx) => (
               <span 
                 key={idx}
@@ -184,13 +177,19 @@ export const HeroContent = () => {
             ACTIVE
           </div>
 
-          {/* 🔹 Image Container */}
+          {/* 🔹 Image Container with Fail-Proof Fallback */}
           <div className="w-full aspect-[4/5] rounded-[22px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* Direct Local Image from public/Naeem.jpg */}
+            {/* Image Tag with Direct Local & Remote Fail-Safe */}
             <img
               src="/Naeem.jpg"
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.src.includes("phototourl.com")) {
+                  target.src = "https://cdn.phototourl.com/member/2026-08-08-da5558d4-d1d6-42fd-8af1-321c87b31578.jpg";
+                }
+              }}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               draggable={false}
             />
