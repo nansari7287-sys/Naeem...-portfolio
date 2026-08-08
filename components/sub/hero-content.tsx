@@ -1,17 +1,17 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (NEW VERIFIED CDN IMAGE ASSET)
+// 👑 VIP ENTERPRISE HERO COMPONENT (LOCAL /Naeem.jpg ASSET INTEGRATION)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
 // DESCRIPTION:
-// - Direct integration of user-provided member CDN endpoint.
+// - Direct Local Asset: Loads /Naeem.jpg from the public folder (100% offline & fast).
 // - 3-Click Interaction Matrix:
-//     * Click 1: Reveal identity card with colorful nameplate.
+//     * Click 1: Reveal photo + Colorful Glowing Nameplate.
 //     * Click 2: Remains open / active.
-//     * Click 3: Locks back to initial cyberpunk cover.
-// - Stylized Unicode Branding: Enforcing '𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎' & '𝑵𝒂𝒆𝒆𝒎'.
+//     * Click 3: Locks back to initial Cyberpunk cover.
+// - Strictly Enforced Fonts: '𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎' and '𝑵𝒂𝒆𝒆𝒎'.
 // ============================================================================
 
 "use client";
@@ -187,12 +187,10 @@ export const HeroContent = () => {
           {/* 🔹 Image Container */}
           <div className="w-full aspect-[4/5] rounded-[22px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* Direct Member CDN Link */}
+            {/* Direct Local Image from public/Naeem.jpg */}
             <img
-              src="https://cdn.phototourl.com/member/2026-08-08-da5558d4-d1d6-42fd-8af1-321c87b31578.jpg"
+              src="/Naeem.jpg"
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
-              referrerPolicy="no-referrer"
-              crossOrigin="anonymous"
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               draggable={false}
             />
@@ -204,7 +202,7 @@ export const HeroContent = () => {
             */}
             
             {/* STATE 1: INITIAL COVER (Visible when clickCount === 0) */}
-            <div className={`absolute inset-0 bg-black/75 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
+            <div className={`absolute inset-0 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
               isRevealed ? "opacity-0 pointer-events-none -translate-y-10" : "opacity-100 pointer-events-auto translate-y-0"
             } z-20 px-4 text-center`}>
               <h2 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-400 drop-shadow-[0_0_25px_rgba(112,66,248,1)] tracking-wider">
