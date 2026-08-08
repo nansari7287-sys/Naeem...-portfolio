@@ -60,8 +60,7 @@ export const PERSONAL_INFO = {
   institute: "Al-Kabir Institute of Management and Technology",
   branch: "Diploma in Electrical Engineering",
   location: "Jharkhand, India",
-  // Note: Ensure naeem.jpg is placed inside the 'public' folder of your Next.js project
-  profile_photo: "/naeem.jpg", 
+  profile_photo: "", // Photo removed as requested
 };
 
 // ----------------------------------------------------------------------------
@@ -157,6 +156,7 @@ export const PROJECTS: IProject[] = [
 // ----------------------------------------------------------------------------
 export const SOCIALS: ISocial[] = [
   { name: "GitHub", icon: RxGithubLogo, link: "https://github.com/nansari7287-sys" },
+  { name: "Facebook", icon: FaFacebook, link: "https://www.facebook.com/share/1Dyr1kjXoM/" },
   { name: "Telegram", icon: FaTelegramPlane, link: "https://t.me/frexxxy" },
   { name: "YouTube", icon: FaYoutube, link: "https://www.youtube.com/@KHOKHRACOMEDY" },
   { name: "Instagram", icon: RxInstagramLogo, link: "https://www.instagram.com/drakoxnaeem" },
@@ -180,6 +180,7 @@ export const FOOTER_DATA: IFooterColumn[] = [
     data: [
       { name: "YouTube Channel", icon: FaYoutube, link: "https://www.youtube.com/@KHOKHRACOMEDY" },
       { name: "Instagram Profile", icon: RxInstagramLogo, link: "https://www.instagram.com/drakoxnaeem" },
+      { name: "Facebook Profile", icon: FaFacebook, link: "https://www.facebook.com/share/1Dyr1kjXoM/" },
     ],
   },
   {
