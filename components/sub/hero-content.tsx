@@ -1,9 +1,17 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (LIVE HD PHOTO & ULTRA NEON GLOW)
+// 👑 VIP ENTERPRISE HERO COMPONENT (3-CLICK CYCLE ENGINE & LIVE PHOTO)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
+// ============================================================================
+// DESCRIPTION:
+// - 3-Click Interaction Matrix: 
+//     * Tap 1: Unlocks & reveals the photo with neon bottom nameplate.
+//     * Tap 2: Maintains live reveal state.
+//     * Tap 3: Locks back to initial cyberpunk blur cover.
+// - New Direct Photo Endpoint: Integrated verified image asset.
+// - Stylish Unicode Monikers: Enforcing '𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎' and '𝑵𝒂𝒆𝒆𝒎'.
 // ============================================================================
 
 "use client";
@@ -15,7 +23,21 @@ import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
 export const HeroContent = () => {
-  const [isRevealed, setIsRevealed] = useState(false);
+  // 🔹 State for the 3-click cycle
+  const [clickCount, setClickCount] = useState(0);
+
+  // Click Handler: Tap 1 opens (count 1), Tap 2 stays (count 2), Tap 3 locks back (resets to 0)
+  const handleCardInteraction = () => {
+    setClickCount((prevCount) => {
+      const nextCount = prevCount + 1;
+      if (nextCount >= 3) {
+        return 0; // Locks and resets on 3rd click
+      }
+      return nextCount; // 1 = Opened, 2 = Open
+    });
+  };
+
+  const isRevealed = clickCount > 0;
 
   return (
     <motion.div
@@ -132,7 +154,7 @@ export const HeroContent = () => {
 
       {/* 
         =======================================================================
-        🚀 RIGHT COLUMN: VIP INTERACTIVE CYBERPUNK IDENTITY CARD
+        🚀 RIGHT COLUMN: VIP INTERACTIVE IDENTITY CARD (3-CLICK CYCLE)
         =======================================================================
       */}
       <motion.div
@@ -142,25 +164,33 @@ export const HeroContent = () => {
         {/* Glow behind card */}
         <div className="absolute w-[260px] h-[260px] md:w-[420px] md:h-[420px] bg-gradient-to-tr from-cyan-500/40 via-purple-600/40 to-pink-500/40 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-0"></div>
         
-        {/* 🔹 Interactive Profile Card */}
+        {/* 🔹 Interactive Profile Card Container */}
         <div 
-          onClick={() => setIsRevealed(!isRevealed)}
-          className="relative flex flex-col p-2.5 rounded-[30px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_50px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none"
+          onClick={handleCardInteraction}
+          className="relative flex flex-col p-2.5 rounded-[30px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_50px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none active:scale-[0.98]"
         >
           
           {/* Status Badges */}
-          <div className="absolute -top-4 left-5 bg-cyan-950 border border-cyan-400/80 px-4 py-1.5 rounded-full text-[11px] font-mono tracking-widest text-cyan-300 shadow-[0_0_20px_rgba(6,182,212,0.8)] z-30 font-bold uppercase">
-            SYS_ARCHITECT
+          <div className="absolute -top-4 left-5 bg-cyan-950 border border-cyan-400/80 px-4 py-1.5 rounded-full text-[11px] font-mono tracking-widest text-cyan-300 shadow-[0_0_20px_rgba(6,182,212,0.8)] z-30 font-bold uppercase flex items-center gap-1.5">
+            <span>SYS_ARCHITECT</span>
+            {isRevealed && (
+              <span className="text-[9px] bg-cyan-500/20 px-1.5 py-0.5 rounded text-cyan-300">
+                {clickCount}/3
+              </span>
+            )}
           </div>
+          
           <div className="absolute -top-4 right-5 bg-pink-950 border border-pink-400/80 px-4 py-1.5 rounded-full text-[11px] font-mono tracking-widest text-pink-300 shadow-[0_0_20px_rgba(244,114,182,0.8)] z-30 font-bold uppercase flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span>
             ACTIVE
           </div>
 
-          {/* 🔹 Photo Container (Updated with user's verified image URL) */}
+          {/* 🔹 Image Container */}
           <div className="w-full aspect-[4/5] rounded-[22px] overflow-hidden border border-white/20 relative bg-black">
+            
+            {/* Live Photo Integration with Error-Free Direct Rendering */}
             <img
-              src="https://cdn.phototourl.com/free/2026-08-08-698674fc-a4d6-434a-bf27-cb80724e2ad1.jpg"
+              src="https://kommodo.ai/i/JSYt9GjtOK3Mm1A2KvAC"
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
               referrerPolicy="no-referrer"
               crossOrigin="anonymous"
@@ -168,27 +198,35 @@ export const HeroContent = () => {
               draggable={false}
             />
             
-            {/* 1. INITIAL COVER OVERLAY */}
+            {/* 
+              =================================================================
+              🔥 3-CLICK CONTROLLED COVER OVERLAY
+              =================================================================
+            */}
+            
+            {/* STATE 1: INITIAL COVER (Visible when clickCount === 0) */}
             <div className={`absolute inset-0 bg-black/75 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
-              isRevealed ? "opacity-0 pointer-events-none -translate-y-10" : "group-hover:opacity-0 group-hover:pointer-events-none group-hover:-translate-y-10"
+              isRevealed ? "opacity-0 pointer-events-none -translate-y-10" : "opacity-100 pointer-events-auto translate-y-0"
             } z-20 px-4 text-center`}>
               <h2 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-400 drop-shadow-[0_0_25px_rgba(112,66,248,1)] tracking-wider">
                 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎
               </h2>
               <div className="text-cyan-400 font-mono text-[10px] md:text-xs mt-3 tracking-widest border border-cyan-400/50 px-3.5 py-1.5 rounded-full bg-cyan-950/40 shadow-[0_0_15px_rgba(6,182,212,0.6)] animate-pulse">
-                [ TAP / HOVER TO REVEAL ]
+                [ 1 CLICK TO REVEAL ]
               </div>
             </div>
 
-            {/* 2. REVEALED BOTTOM NAMEPLATE (Neon Multi-Color Glow) */}
+            {/* STATE 2: REVEALED BOTTOM NAMEPLATE (Visible when clickCount === 1 or 2) */}
             <div className={`absolute bottom-0 left-0 w-full p-5 bg-gradient-to-t from-black via-black/85 to-transparent transition-all duration-500 ease-out z-30 flex flex-col items-center justify-center ${
-              isRevealed ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
+              isRevealed ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
             }`}>
               
+              {/* Colorful Glowing 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 */}
               <h2 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 drop-shadow-[0_0_20px_rgba(244,114,182,0.9)] tracking-wider">
                 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎
               </h2>
               
+              {/* Colorful Stylish 𝑵𝒂𝒆𝒆𝒎 with glowing divider */}
               <div className="flex items-center gap-2.5 mt-1.5">
                 <div className="h-[2px] w-10 bg-gradient-to-r from-transparent via-cyan-400 to-purple-500"></div>
                 <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-pink-300 text-sm font-bold tracking-widest drop-shadow-[0_0_10px_rgba(6,182,212,0.8)]">
@@ -196,8 +234,14 @@ export const HeroContent = () => {
                 </div>
                 <div className="h-[2px] w-10 bg-gradient-to-l from-transparent via-cyan-400 to-purple-500"></div>
               </div>
+
+              {/* Helper badge telling user 3rd click locks it */}
+              <span className="text-[10px] font-mono text-gray-400 mt-2 tracking-widest uppercase">
+                [ Click 3 times to lock ]
+              </span>
             </div>
 
+            {/* Inner Border Glow */}
             <div className="absolute inset-0 border-[2px] border-transparent group-hover:border-cyan-500/60 rounded-[22px] transition-colors duration-500 z-40 pointer-events-none"></div>
           </div>
         </div>
