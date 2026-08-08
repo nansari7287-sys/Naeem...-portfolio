@@ -1,14 +1,9 @@
 // ============================================================================
 // 📁 components/main/projects.tsx
-// 👑 VIP ENTERPRISE PROJECTS SHOWCASE ARCHITECTURE
+// 👑 VIP ENTERPRISE PROJECTS SECTION (COLORFUL HEADING FIXED)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
-// ============================================================================
-// DESCRIPTION:
-// This component renders the core engineered systems showcase. It utilizes
-// responsive grid mechanics, ambient purple/cyan neon backdrops, and dynamically
-// feeds project records directly from the centralized constants directory.
 // ============================================================================
 
 "use client";
@@ -25,14 +20,10 @@ export const Projects = () => {
       id="projects"
       className="flex flex-col items-center justify-center py-20 px-4 md:px-10 relative z-30 overflow-hidden max-w-[1600px] mx-auto"
     >
-      {/* 🌌 Deep Ambient Glow strictly behind the projects grid */}
+      {/* 🌌 Deep Ambient Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[350px] md:w-[700px] h-[350px] md:h-[500px] bg-gradient-to-tr from-cyan-500/20 via-purple-600/25 to-pink-500/20 rounded-full blur-[120px] md:blur-[160px] pointer-events-none z-0" />
 
-      {/* 
-        =======================================================================
-        🌟 SECTION HEADER & BADGES
-        =======================================================================
-      */}
+      {/* 🌟 SECTION HEADER */}
       <div className="flex flex-col items-center justify-center text-center z-10 mb-16">
         
         {/* 🔹 Top Status Badge */}
@@ -49,18 +40,23 @@ export const Projects = () => {
           </span>
         </motion.div>
 
-        {/* 🔹 Main Section Title */}
+        {/* 🔹 Main Section Title (Multi-Color Neon Glow) */}
         <motion.h1
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 tracking-tight leading-tight drop-shadow-[0_0_35px_rgba(112,66,248,0.5)]"
+          className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight"
         >
-          Featured Systems by <span className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.7)]">𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 drop-shadow-[0_0_25px_rgba(112,66,248,0.7)]">
+            Featured Systems by{" "}
+          </span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-400 to-cyan-400 drop-shadow-[0_0_35px_rgba(244,114,182,0.9)] inline-block mt-2 md:mt-0">
+            𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎
+          </span>
         </motion.h1>
 
-        {/* 🔹 Subtitle Description */}
+        {/* 🔹 Subtitle */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -72,11 +68,7 @@ export const Projects = () => {
         </motion.p>
       </div>
 
-      {/* 
-        =======================================================================
-        🚀 PROJECTS SHOWCASE GRID
-        =======================================================================
-      */}
+      {/* 🚀 PROJECTS SHOWCASE GRID */}
       <div className="h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 px-2 sm:px-6 z-10">
         {PROJECTS.map((project, index) => (
           <motion.div
@@ -97,7 +89,7 @@ export const Projects = () => {
         ))}
       </div>
 
-      {/* 🔹 Bottom Terminal Prompt Accent */}
+      {/* Bottom Telemetry Prompt */}
       <div className="mt-16 flex items-center gap-2 text-gray-500 font-mono text-xs md:text-sm z-10 bg-[#030014]/60 px-5 py-2 rounded-full border border-white/5 shadow-inner">
         <FaCodeBranch className="text-purple-400" />
         <span>REPOSITORY_STATUS:</span>
