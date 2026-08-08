@@ -1,17 +1,17 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (3-CLICK CYCLE ENGINE & LIVE PHOTO)
+// 👑 VIP ENTERPRISE HERO COMPONENT (ORIGINAL VERIFIED CDN PHOTO REVERTED)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
 // DESCRIPTION:
-// - 3-Click Interaction Matrix: 
-//     * Tap 1: Unlocks & reveals the photo with neon bottom nameplate.
-//     * Tap 2: Maintains live reveal state.
-//     * Tap 3: Locks back to initial cyberpunk blur cover.
-// - New Direct Photo Endpoint: Integrated verified image asset.
-// - Stylish Unicode Monikers: Enforcing '𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎' and '𝑵𝒂𝒆𝒆𝒎'.
+// - Reverted to the first verified working CDN endpoint.
+// - 3-Click Interaction Matrix:
+//     * Click 1: Reveal identity card with colorful nameplate.
+//     * Click 2: Remains open / active.
+//     * Click 3: Locks back to initial cyberpunk cover.
+// - Stylized Unicode Branding: Enforcing '𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎' & '𝑵𝒂𝒆𝒆𝒎'.
 // ============================================================================
 
 "use client";
@@ -23,17 +23,16 @@ import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
 export const HeroContent = () => {
-  // 🔹 State for the 3-click cycle
+  // 🔹 State controlling the 3-click reveal / lock cycle
   const [clickCount, setClickCount] = useState(0);
 
-  // Click Handler: Tap 1 opens (count 1), Tap 2 stays (count 2), Tap 3 locks back (resets to 0)
   const handleCardInteraction = () => {
-    setClickCount((prevCount) => {
-      const nextCount = prevCount + 1;
-      if (nextCount >= 3) {
-        return 0; // Locks and resets on 3rd click
+    setClickCount((prev) => {
+      const next = prev + 1;
+      if (next >= 3) {
+        return 0; // 3rd click closes/locks it
       }
-      return nextCount; // 1 = Opened, 2 = Open
+      return next; // 1 = Revealed, 2 = Remains Revealed
     });
   };
 
@@ -161,7 +160,7 @@ export const HeroContent = () => {
         variants={slideInFromRight(0.8)}
         className="w-full h-full flex justify-center items-center relative lg:w-[38%] mt-8 lg:mt-0 z-[45]"
       >
-        {/* Glow behind card */}
+        {/* Ambient Glow */}
         <div className="absolute w-[260px] h-[260px] md:w-[420px] md:h-[420px] bg-gradient-to-tr from-cyan-500/40 via-purple-600/40 to-pink-500/40 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-0"></div>
         
         {/* 🔹 Interactive Profile Card Container */}
@@ -188,9 +187,9 @@ export const HeroContent = () => {
           {/* 🔹 Image Container */}
           <div className="w-full aspect-[4/5] rounded-[22px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* Live Photo Integration with Error-Free Direct Rendering */}
+            {/* Direct First CDN Link Reverted */}
             <img
-              src="https://kommodo.ai/i/JSYt9GjtOK3Mm1A2KvAC"
+              src="https://cdn.phototourl.com/free/2026-08-08-db4671e3-2aca-4d3d-871e-cdf3ffd7e49d.jpg"
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
               referrerPolicy="no-referrer"
               crossOrigin="anonymous"
@@ -235,7 +234,7 @@ export const HeroContent = () => {
                 <div className="h-[2px] w-10 bg-gradient-to-l from-transparent via-cyan-400 to-purple-500"></div>
               </div>
 
-              {/* Helper badge telling user 3rd click locks it */}
+              {/* Helper badge */}
               <span className="text-[10px] font-mono text-gray-400 mt-2 tracking-widest uppercase">
                 [ Click 3 times to lock ]
               </span>
