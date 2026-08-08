@@ -1,6 +1,6 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (LIVE CDN PHOTO & NEON REVEAL FIXED)
+// 👑 VIP ENTERPRISE HERO COMPONENT (LIVE HD PHOTO & ULTRA NEON GLOW)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
@@ -26,13 +26,13 @@ export const HeroContent = () => {
       
       {/* 
         =======================================================================
-        🌟 LEFT COLUMN: TEXT, BIO & VIBRANT BADGES (BACKGROUND BALANCED)
+        🌟 LEFT COLUMN: TEXT, BIO & VIBRANT BADGES
         =======================================================================
       */}
       <div className="h-full w-full flex flex-col gap-6 justify-center m-auto text-start lg:w-[58%] relative z-[60]">
         
-        {/* 🌌 BALANCED GLASS SHIELD (Allows background flares to show through while maintaining clarity) */}
-        <div className="bg-[#030014]/35 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-purple-500/25 shadow-[0_0_35px_rgba(0,0,0,0.6)] relative z-20">
+        {/* 🌌 BALANCED DARK GLASS SHIELD */}
+        <div className="bg-[#030014]/40 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-purple-500/30 shadow-[0_0_35px_rgba(0,0,0,0.7)] relative z-20">
           
           {/* 🔹 Top Welcome Badge */}
           <motion.div
@@ -132,20 +132,20 @@ export const HeroContent = () => {
 
       {/* 
         =======================================================================
-        🚀 RIGHT COLUMN: VIP INTERACTIVE CYBERPUNK IDENTITY CARD (LIVE CDN FIXED)
+        🚀 RIGHT COLUMN: VIP INTERACTIVE CYBERPUNK IDENTITY CARD
         =======================================================================
       */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="w-full h-full flex justify-center items-center relative lg:w-[38%] mt-8 lg:mt-0 z-[45]"
       >
-        {/* Glow behind the card */}
+        {/* Glow behind card */}
         <div className="absolute w-[260px] h-[260px] md:w-[420px] md:h-[420px] bg-gradient-to-tr from-cyan-500/40 via-purple-600/40 to-pink-500/40 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-0"></div>
         
-        {/* 🔹 Interactive Profile Card (Supports both Touch/Click & Desktop Hover) */}
+        {/* 🔹 Interactive Profile Card */}
         <div 
           onClick={() => setIsRevealed(!isRevealed)}
-          className={`relative flex flex-col p-2.5 rounded-[30px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_50px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none`}
+          className="relative flex flex-col p-2.5 rounded-[30px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_50px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none"
         >
           
           {/* Status Badges */}
@@ -157,12 +157,10 @@ export const HeroContent = () => {
             ACTIVE
           </div>
 
-          {/* 🔹 Image Container with Live CDN & Fail-Safe Fallbacks */}
+          {/* 🔹 Photo Container (Updated with user's verified image URL) */}
           <div className="w-full aspect-[4/5] rounded-[22px] overflow-hidden border border-white/20 relative bg-black">
-            
-            {/* Live CDN Photo with No-Referrer flag for guaranteed loading */}
             <img
-              src="https://cdn.phototourl.com/free/2026-08-08-13eb7c2d-cf97-4938-bdde-695fff047e5e.jpg"
+              src="https://cdn.phototourl.com/free/2026-08-08-698674fc-a4d6-434a-bf27-cb80724e2ad1.jpg"
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
               referrerPolicy="no-referrer"
               crossOrigin="anonymous"
@@ -170,13 +168,7 @@ export const HeroContent = () => {
               draggable={false}
             />
             
-            {/* 
-              =================================================================
-              🔥 VIP NEON REVEAL INTERACTION
-              =================================================================
-            */}
-            
-            {/* 1. INITIAL COVER OVERLAY (Blur & Glowing Name - Fades out on Click/Hover) */}
+            {/* 1. INITIAL COVER OVERLAY */}
             <div className={`absolute inset-0 bg-black/75 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
               isRevealed ? "opacity-0 pointer-events-none -translate-y-10" : "group-hover:opacity-0 group-hover:pointer-events-none group-hover:-translate-y-10"
             } z-20 px-4 text-center`}>
@@ -188,17 +180,15 @@ export const HeroContent = () => {
               </div>
             </div>
 
-            {/* 2. REVEALED BOTTOM NAMEPLATE (Ultra Colorful Neon Gradient & Glow) */}
+            {/* 2. REVEALED BOTTOM NAMEPLATE (Neon Multi-Color Glow) */}
             <div className={`absolute bottom-0 left-0 w-full p-5 bg-gradient-to-t from-black via-black/85 to-transparent transition-all duration-500 ease-out z-30 flex flex-col items-center justify-center ${
               isRevealed ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
             }`}>
               
-              {/* Colorful Glowing 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 */}
               <h2 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 drop-shadow-[0_0_20px_rgba(244,114,182,0.9)] tracking-wider">
                 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎
               </h2>
               
-              {/* Colorful Stylish 𝑵𝒂𝒆𝒆𝒎 with glowing divider */}
               <div className="flex items-center gap-2.5 mt-1.5">
                 <div className="h-[2px] w-10 bg-gradient-to-r from-transparent via-cyan-400 to-purple-500"></div>
                 <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-pink-300 text-sm font-bold tracking-widest drop-shadow-[0_0_10px_rgba(6,182,212,0.8)]">
@@ -208,7 +198,6 @@ export const HeroContent = () => {
               </div>
             </div>
 
-            {/* Inner Border Glow */}
             <div className="absolute inset-0 border-[2px] border-transparent group-hover:border-cyan-500/60 rounded-[22px] transition-colors duration-500 z-40 pointer-events-none"></div>
           </div>
         </div>
