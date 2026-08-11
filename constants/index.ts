@@ -59,12 +59,14 @@ export const PERSONAL_INFO = {
   tagline: "Bridging core hardware electrical engineering logic with advanced Python automation, Termux environments, and scalable Telegram C2 networks.",
   institute: "Al-Kabir Institute of Management and Technology",
   branch: "Diploma in Electrical Engineering",
-  location: "Chino, Jharkhand, India",
-  profile_photo: "https://github.com/nansari7287-sys.png",
+  // 📍 Location updated to Jamshedpur, Jharkhand as requested
+  location: "Jamshedpur, Jharkhand, India", 
+  // 🖼️ Centralizing the main verified photo URL here
+  profile_photo: "https://kommodo.ai/i/7pkhnuZplvADbqb0Xiax", 
 };
 
 // ----------------------------------------------------------------------------
-// 📖 BIOGRAPHY & ARCHITECTURE OVERVIEW (Location manage central here)
+// 📖 BIOGRAPHY & ARCHITECTURE OVERVIEW 
 // ----------------------------------------------------------------------------
 export const ABOUT_DATA = {
   heading: "Bridging Electrical Hardware Logic with Cloud Software Automation",
@@ -165,7 +167,7 @@ export const SOCIALS: ISocial[] = [
 ];
 
 // ----------------------------------------------------------------------------
-// 📜 FOOTER NAVIGATION MAP (Chino, Jharkhand Location central here)
+// 📜 FOOTER NAVIGATION MAP (Location updated here too)
 // ----------------------------------------------------------------------------
 export const FOOTER_DATA: IFooterColumn[] = [
   {
