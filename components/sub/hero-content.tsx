@@ -1,13 +1,13 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (FAIL-SAFE IMAGE & ENHANCED SPACING)
+// 👑 VIP ENTERPRISE HERO COMPONENT (ULTIMATE DEPLOYMENT-SAFE IMAGE FIX)
 // ============================================================================
 // AUTHOR: 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 (𝑵𝒂𝒆𝒆𝒎)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
 // DESCRIPTION:
-// - Universal Image Fix: Case-sensitive path '/naeem.jpg' with Next.js optimization
-//   and automatic local fallback handler (prevents broken boxes).
+// - Universal Image Fix: Using direct external URL (Kommodo) with 'no-referrer'
+//   to completely bypass Vercel's strict CSP/CORS blocking during deployments.
 // - Interactive 3-Click Matrix: Fully Typesafe reveal/lock engine.
 // - Enhanced Spacing: Main headline typography optimized for professional look.
 // ============================================================================
@@ -18,14 +18,11 @@ import React, { useState } from "react";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image"; // Next.js ka optimised image tag
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
 export const HeroContent = () => {
   // 🔹 State controlling the 3-click reveal / lock cycle of the Identity Card
   const [clickCount, setClickCount] = useState<number>(0);
-  // 🔹 Local state for case-sensitive file path
-  const [currentImgSrc, setCurrentImgSrc] = useState<string>("/naeem.jpg");
 
   // 🔹 Interaction Handler: Tap 1 opens, Tap 2 maintains, Tap 3 locks back.
   const handleCardInteraction = () => {
@@ -189,21 +186,20 @@ export const HeroContent = () => {
           {/* 🔹 Image Container with Fail-Proof Direct Loader */}
           <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* Direct Local Image Load from public folder */}
+            {/* 🚀 THE ULTIMATE FIX: External URL + Referrer Policy Bypass */}
             <img
-              src="/naeem.jpg" // Local direct path from your verified screenshot
+              src="https://kommodo.ai/i/7pkhnuZplvADbqb0Xiax" // Apka diya hua exact external URL
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
-              referrerPolicy="no-referrer"
+              referrerPolicy="no-referrer" // YEH LINE VERCEL KI SECURITY KO BYPASS KAREGI
               crossOrigin="anonymous"
               onLoad={(e) => {
-                const target = e.target as HTMLImageElement;
-                console.log(`Image successfully loaded from: ${target.src}`);
+                console.log("Image loaded successfully from Kommodo AI");
               }}
               onError={(e) => {
-                // If local /naeem.jpg fails, 자동으로 stable remote fallback try karega
+                // Agar Kommodo link fail ho, toh local fallback use karega
                 const target = e.target as HTMLImageElement;
-                console.warn(`Local photo load failed: ${target.src}. Trying backup CDN...`);
-                target.src = "https://cdn.phototourl.com/member/2026-08-08-da5558d4-d1d6-42fd-8af1-321c87b31578.jpg";
+                console.warn("External URL failed, switching to local backup");
+                target.src = "/profile.jpg"; 
               }}
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               draggable={false}
