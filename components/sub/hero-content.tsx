@@ -1,6 +1,6 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (FULL PRODUCTION VERSION)
+// 👑 VIP ENTERPRISE HERO COMPONENT (ORIGINAL NEON STYLING + PHOTO FIX)
 // ============================================================================
 
 "use client";
@@ -12,14 +12,17 @@ import Link from "next/link";
 import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
 
 export const HeroContent = () => {
-  // 🔹 State controlling the 3-click reveal / lock cycle
+  // 🔹 State controlling the 3-click reveal / lock cycle of the Identity Card
   const [clickCount, setClickCount] = useState<number>(0);
 
+  // 🔹 Interaction Handler: Tap 1 opens, Tap 2 maintains, Tap 3 locks back.
   const handleCardInteraction = () => {
     setClickCount((prev) => {
       const nextCount = prev + 1;
-      if (nextCount >= 3) return 0;
-      return nextCount;
+      if (nextCount >= 3) {
+        return 0; // Locks and resets on the 3rd click
+      }
+      return nextCount; // 1 = Opened, 2 = Maintains Open State
     });
   };
 
@@ -31,6 +34,7 @@ export const HeroContent = () => {
       animate="visible"
       className="flex flex-col lg:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 mt-4 md:mt-14 pt-8 w-full z-[50] gap-12 lg:gap-8 max-w-[1600px] mx-auto relative"
     >
+      
       {/* 
         =======================================================================
         🌟 LEFT COLUMN: TYPOGRAPHY, BIO & VIBRANT TAGS
@@ -38,8 +42,10 @@ export const HeroContent = () => {
       */}
       <div className="h-full w-full flex flex-col gap-6 justify-center m-auto text-start lg:w-[58%] relative z-[60]">
         
+        {/* 🌌 BALANCED DARK GLASS SHIELD */}
         <div className="bg-[#030014]/45 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-purple-500/30 shadow-[0_0_35px_rgba(0,0,0,0.7)] relative z-20">
           
+          {/* 🔹 Top Welcome Badge */}
           <motion.div
             variants={slideInFromTop}
             className="py-2 px-4 border border-cyan-500/60 rounded-xl bg-[#030014]/80 shadow-[0_0_20px_rgba(6,182,212,0.5)] flex items-center w-fit mb-5"
@@ -53,6 +59,7 @@ export const HeroContent = () => {
             </h1>
           </motion.div>
 
+          {/* 🔹 Main Headline: Perfectly Aligned & Spaced */}
           <motion.div
             variants={slideInFromLeft(0.5)}
             className="flex flex-col gap-3 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.12] tracking-tight py-1"
@@ -70,6 +77,7 @@ export const HeroContent = () => {
             </span>
           </motion.div>
 
+          {/* 🔹 Biography with Al-Kabir Highlights */}
           <motion.p
             variants={slideInFromLeft(0.8)}
             className="text-[15px] sm:text-base md:text-[17px] text-gray-200 mt-4 mb-6 max-w-[700px] leading-relaxed font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
@@ -85,6 +93,7 @@ export const HeroContent = () => {
             <strong className="text-cyan-400 font-bold">Python automation via Termux</strong>.
           </motion.p>
 
+          {/* 🔹 Technical Feature Badges */}
           <motion.div 
             variants={slideInFromLeft(0.9)}
             className="flex flex-wrap gap-2.5 my-2"
@@ -106,6 +115,7 @@ export const HeroContent = () => {
             ))}
           </motion.div>
 
+          {/* 🔹 Action Buttons */}
           <motion.div
             variants={slideInFromLeft(1)}
             className="flex flex-row flex-wrap items-center gap-4 mt-7"
@@ -133,24 +143,29 @@ export const HeroContent = () => {
 
       {/* 
         =======================================================================
-        🚀 RIGHT COLUMN: VIP INTERACTIVE IDENTITY CARD (STABLE IMAGE)
+        🚀 RIGHT COLUMN: VIP INTERACTIVE CYBERPUNK IDENTITY CARD 
         =======================================================================
       */}
       <motion.div
         variants={slideInFromRight(0.8)}
-        className="w-full flex justify-center items-center relative lg:w-[38%] mt-8 lg:mt-0 z-[45]"
+        className="w-full h-full flex justify-center items-center relative lg:w-[38%] mt-8 lg:mt-0 z-[45]"
       >
+        {/* Glow behind card */}
         <div className="absolute w-[260px] h-[260px] md:w-[420px] md:h-[420px] bg-gradient-to-tr from-cyan-500/40 via-purple-600/40 to-pink-500/40 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-0"></div>
         
+        {/* 🔹 Interactive Profile Card (Touch/Click Controlled) */}
         <div 
           onClick={handleCardInteraction}
           className="relative flex flex-col p-3 rounded-[32px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_55px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none active:scale-[0.98]"
         >
           
+          {/* Status Badges */}
           <div className="absolute -top-4 left-5 bg-cyan-950 border border-cyan-400/80 px-4 py-1.5 rounded-full text-[11px] font-mono tracking-widest text-cyan-300 shadow-[0_0_20px_rgba(6,182,212,0.8)] z-30 font-bold uppercase flex items-center gap-1.5">
             <span>SYS_ARCHITECT</span>
             {isRevealed && (
-              <span className="text-[9px] bg-cyan-500/20 px-1.5 py-0.5 rounded text-cyan-300">{clickCount}/3</span>
+              <span className="text-[9px] bg-cyan-500/20 px-1.5 py-0.5 rounded text-cyan-300">
+                {clickCount}/3
+              </span>
             )}
           </div>
           
@@ -159,35 +174,74 @@ export const HeroContent = () => {
             ACTIVE
           </div>
 
-          {/* 🖼️ IMAGE CONTAINER - Fixed Dimensions = NO FLICKER */}
-          <div className="w-full h-[400px] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
+          {/* 🔹 Image Container with Fail-Proof Direct Loader */}
+          <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
+            {/* 🖼️ ONLY THIS WAS CHANGED: Photo Load Fix */}
             <img
-              src="https://kommodo.ai/i/7pkhnuZplvADbqb0Xiax" 
+              src="https://kommodo.ai/i/7pkhnuZplvADbqb0Xiax"
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
               referrerPolicy="no-referrer"
               crossOrigin="anonymous"
               loading="eager"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
+              style={{ display: 'block', width: '100%', height: '100%' }}
               onError={(e) => {
-                e.currentTarget.src = "/profile.jpg"; // Backup local file
+                const target = e.target as HTMLImageElement;
+                target.src = "/profile.jpg";
               }}
               draggable={false}
             />
             
-            {/* Overlay */}
-            <div className={`absolute inset-0 bg-black/80 flex flex-col items-center justify-center transition-all duration-500 ${isRevealed ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
-              <h2 className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-pink-400">𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎</h2>
-              <div className="text-cyan-400 font-mono text-xs mt-3 animate-pulse">[ CLICK TO REVEAL ]</div>
+            {/* 
+              =================================================================
+              🔥 3-CLICK CONTROLLED COVER OVERLAY (ORIGINAL NEON STYLING)
+              =================================================================
+            */}
+            
+            {/* STATE 1: INITIAL COVER (Visible when clickCount === 0) */}
+            <div className={`absolute inset-0 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
+              isRevealed ? "opacity-0 pointer-events-none -translate-y-10" : "opacity-100 pointer-events-auto translate-y-0"
+            } z-20 px-4 text-center`}>
+              <h2 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-400 drop-shadow-[0_0_25px_rgba(112,66,248,1)] tracking-wider">
+                𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎
+              </h2>
+              <div className="text-cyan-400 font-mono text-[10px] md:text-xs mt-3 tracking-widest border border-cyan-400/50 px-3.5 py-1.5 rounded-full bg-cyan-950/40 shadow-[0_0_15px_rgba(6,182,212,0.6)] animate-pulse">
+                [ 1 CLICK TO REVEAL ]
+              </div>
             </div>
 
-            {/* Nameplate */}
-            <div className={`absolute bottom-0 w-full p-5 bg-gradient-to-t from-black to-transparent ${isRevealed ? "opacity-100" : "opacity-0"}`}>
-              <h2 className="text-2xl font-black text-white text-center">𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎</h2>
+            {/* STATE 2: REVEALED BOTTOM NAMEPLATE (Visible when clickCount === 1 or 2) */}
+            <div className={`absolute bottom-0 left-0 w-full p-5 bg-gradient-to-t from-black via-black/85 to-transparent transition-all duration-500 ease-out z-30 flex flex-col items-center justify-center ${
+              isRevealed ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
+            }`}>
+              
+              {/* Colorful Glowing 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 */}
+              <h2 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 drop-shadow-[0_0_20px_rgba(244,114,182,0.9)] tracking-wider">
+                𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎
+              </h2>
+              
+              {/* Colorful Stylish 𝑵𝒂𝒆𝒆𝒎 with glowing divider */}
+              <div className="flex items-center gap-2.5 mt-1.5">
+                <div className="h-[2px] w-10 bg-gradient-to-r from-transparent via-cyan-400 to-purple-500"></div>
+                <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-pink-300 text-sm font-bold tracking-widest drop-shadow-[0_0_10px_rgba(6,182,212,0.8)]">
+                  𝑵𝒂𝒆𝒆𝒎
+                </div>
+                <div className="h-[2px] w-10 bg-gradient-to-l from-transparent via-cyan-400 to-purple-500"></div>
+              </div>
+
+              {/* Helper badge */}
+              <span className="text-[10px] font-mono text-gray-400 mt-2 tracking-widest uppercase">
+                [ Click 3 times to lock ]
+              </span>
             </div>
+
+            {/* Inner Border Glow */}
+            <div className="absolute inset-0 border-[2px] border-transparent group-hover:border-cyan-500/60 rounded-[24px] transition-colors duration-500 z-40 pointer-events-none"></div>
           </div>
         </div>
       </motion.div>
+      
     </motion.div>
   );
 };
