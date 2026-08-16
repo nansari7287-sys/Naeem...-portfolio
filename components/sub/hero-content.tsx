@@ -1,6 +1,6 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (ORIGINAL NEON STYLING + PERMANENT LOCAL PHOTO)
+// 👑 VIP ENTERPRISE HERO COMPONENT (FULL NEON STYLING + URL PHOTO FIX)
 // ============================================================================
 
 "use client";
@@ -52,14 +52,14 @@ export const HeroContent = () => {
           >
             <SparklesIcon className="text-cyan-400 mr-2.5 h-4 w-4 md:h-5 md:w-5 animate-pulse" />
             <h1 className="text-[13px] md:text-[15px] font-mono tracking-wider uppercase text-gray-100 font-extrabold flex items-center gap-2">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 text-base md:text-lg">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 text-base md:text-lg drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]">
                 𝑵𝒂𝒆𝒆𝒎
               </span> 
               <span className="text-gray-300">// Electrical Engineer & Architect</span>
             </h1>
           </motion.div>
 
-          {/* 🔹 Main Headline: Perfectly Aligned & Spaced */}
+          {/* 🔹 Main Headline: Perfectly Aligned & Spaced with 100% Neon Glow */}
           <motion.div
             variants={slideInFromLeft(0.5)}
             className="flex flex-col gap-3 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.12] tracking-tight py-1"
@@ -82,7 +82,7 @@ export const HeroContent = () => {
             variants={slideInFromLeft(0.8)}
             className="text-[15px] sm:text-base md:text-[17px] text-gray-200 mt-4 mb-6 max-w-[700px] leading-relaxed font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
           >
-            I am <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-black text-xl mr-1">𝑵𝒂𝒆𝒆𝒎</strong>, 
+            I am <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-black text-xl mr-1 drop-shadow-[0_0_10px_rgba(112,66,248,0.8)]">𝑵𝒂𝒆𝒆𝒎</strong>, 
             pursuing a Diploma in <strong className="text-pink-400 font-bold">Electrical Engg.</strong> at{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-500 to-cyan-400 font-extrabold drop-shadow-[0_0_15px_rgba(244,114,182,0.9)] text-base md:text-lg border-b border-pink-500/60 pb-0.5 inline-block">
               Al-Kabir Institute of Management and Technology
@@ -174,20 +174,18 @@ export const HeroContent = () => {
             ACTIVE
           </div>
 
-          {/* 🔹 Image Container with Fail-Proof Direct Loader */}
+          {/* 🔹 Image Container with Permanent URL Loader */}
           <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* 🖼️ ONLY THIS WAS CHANGED: Permanent Local Photo Load Fix */}
+            {/* 🖼️ URL SET DIRECTLY TO AVOID FLICKER/CACHE ISSUES */}
             <img
-              src="/Naeem.jpg" // ✅ PERMANENT LOCAL PATH ADDED HERE
+              src="https://i.postimg.cc/Zn7m3T8F/project-2.jpg" 
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
               loading="eager"
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               style={{ display: 'block', width: '100%', height: '100%' }}
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = "/profile.jpg"; // Backup if Naeem.jpg is missing
-              }}
+              referrerPolicy="no-referrer"
+              crossOrigin="anonymous"
               draggable={false}
             />
             
