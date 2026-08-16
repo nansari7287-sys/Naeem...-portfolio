@@ -229,7 +229,7 @@ export const HeroContent = () => {
               </div>
 
               {/* Helper badge */}
-              <span className="text-[10px] font-mono text-gray-400 mt-2 tracking-widest uppercase">
+              <span className="text-[10px] font-mono text-cyan-400/70 mt-2 tracking-widest uppercase">
                 [ Click 3 times to lock ]
               </span>
             </div>
