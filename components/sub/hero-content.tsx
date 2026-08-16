@@ -1,6 +1,6 @@
 // ============================================================================
 // 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (ORIGINAL NEON STYLING + PHOTO FIX)
+// 👑 VIP ENTERPRISE HERO COMPONENT (ORIGINAL NEON STYLING + PERMANENT LOCAL PHOTO)
 // ============================================================================
 
 "use client";
@@ -177,18 +177,16 @@ export const HeroContent = () => {
           {/* 🔹 Image Container with Fail-Proof Direct Loader */}
           <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
             
-            {/* 🖼️ ONLY THIS WAS CHANGED: Photo Load Fix */}
+            {/* 🖼️ ONLY THIS WAS CHANGED: Permanent Local Photo Load Fix */}
             <img
-              src="https://kommodo.ai/i/7pkhnuZplvADbqb0Xiax"
+              src="/Naeem.jpg" // ✅ PERMANENT LOCAL PATH ADDED HERE
               alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
-              referrerPolicy="no-referrer"
-              crossOrigin="anonymous"
               loading="eager"
               className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
               style={{ display: 'block', width: '100%', height: '100%' }}
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = "/profile.jpg";
+                target.src = "/profile.jpg"; // Backup if Naeem.jpg is missing
               }}
               draggable={false}
             />
