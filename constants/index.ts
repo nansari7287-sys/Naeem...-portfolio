@@ -60,11 +60,11 @@ export const PERSONAL_INFO = {
   institute: "Al-Kabir Institute of Management and Technology",
   branch: "Diploma in Electrical Engineering",
   location: "Jamshedpur, Jharkhand, India", 
-  profile_photo: "/profile.jpg", 
+  profile_photo: "https://i.postimg.cc/Zn7m3T8F/project-2.jpg", 
 };
 
 // ----------------------------------------------------------------------------
-// 📖 BIOGRAPHY & ARCHITECTURE OVERVIEW
+// 📖 BIOGRAPHY & ARCHITECTURE OVERVIEW 
 // ----------------------------------------------------------------------------
 export const ABOUT_DATA = {
   heading: "Bridging Electrical Hardware Logic with Cloud Software Automation",
@@ -128,7 +128,7 @@ export const OTHER_SKILL: ISkill[] = [
 ];
 
 // ----------------------------------------------------------------------------
-// 🏆 ENGINEERED PROJECTS SHOWCASE (ORIGINAL PHOTOS RESTORED)
+// 🏆 ENGINEERED PROJECTS SHOWCASE (ORIGINAL THUMBNAILS RESTORED)
 // ----------------------------------------------------------------------------
 export const PROJECTS: IProject[] = [
   {
