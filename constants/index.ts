@@ -59,10 +59,10 @@ export const PERSONAL_INFO = {
   tagline: "Bridging core hardware electrical engineering logic with advanced Python automation, Termux environments, and scalable Telegram C2 networks.",
   institute: "Al-Kabir Institute of Management and Technology",
   branch: "Diploma in Electrical Engineering",
-  // 📍 Location updated to Jamshedpur, Jharkhand as requested
+  // 📍 Location updated
   location: "Jamshedpur, Jharkhand, India", 
-  // 🖼️ Centralizing the main verified photo URL here
-  profile_photo: "https://kommodo.ai/i/7pkhnuZplvADbqb0Xiax", 
+  // 🖼️ Main verified profile photo - Local path for permanent load
+  profile_photo: "/profile.jpg", 
 };
 
 // ----------------------------------------------------------------------------
@@ -136,19 +136,22 @@ export const PROJECTS: IProject[] = [
   {
     title: "𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Elite Space Architecture",
     description: "A high-performance Next.js 14 portfolio engineered with 60FPS Framer Motion animations, glassmorphism telemetry, and zero-latency routing.",
-    image: "/projects/project-1.png",
-    link: "https://frexxy-portfolio-3dri.vercel.app/",
+    // Updated to use local permanent path
+    image: "/project-1.png", 
+    link: "https://naeem-portfolio-k8sj-ten.vercel.app/",
   },
   {
     title: "𝑵𝒂𝒆𝒆𝒎 Enterprise Bot C2 Network",
     description: "An asynchronous command & control bot infrastructure engineered via Python and deployed for high-speed automated task management.",
-    image: "/projects/project-2.png",
+    // Updated to use the external URL you provided as an alternative
+    image: "https://i.postimg.cc/Zn7m3T8F/project-2.jpg", 
     link: "https://github.com/nansari7287-sys",
   },
   {
     title: "𝑵𝒂𝒆𝒆𝒎 Termux Automation Engine",
     description: "A centralized terminal scripting suite allowing remote server deployment, live OSINT telemetry, and mobile process execution.",
-    image: "/projects/project-3.png",
+    // Using the other external URL you provided for variety
+    image: "https://kommodo.ai/i/7pkhnuZplvADbqb0Xiax", 
     link: "https://github.com/nansari7287-sys",
   }
 ];
