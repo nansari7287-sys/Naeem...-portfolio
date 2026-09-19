@@ -5,12 +5,6 @@
 // AUTHOR: DrakoXNaeem (Md Naeem Ansari)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
 // ============================================================================
-// DESCRIPTION:
-// This is the foundational layout matrix for the entire portfolio application.
-// It initializes the Next.js 14 App Router layout, injects global stylesheets,
-// configures the primary font (Inter), and orchestrates the persistent UI
-// components (Navbar, StarsCanvas Background, Footer) across all routes.
-// ============================================================================
 
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
@@ -37,7 +31,6 @@ import "./globals.css";
 // ----------------------------------------------------------------------------
 // 🔠 FONT OPTIMIZATION MATRIX
 // ----------------------------------------------------------------------------
-// Utilizing Next.js optimized Google Fonts. Subsets defined for maximum performance.
 const inter = Inter({ 
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -86,6 +79,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Md Naeem Ansari", url: "https://github.com/nansari7287-sys" }],
   creator: "Md Naeem Ansari (DrakoXNaeem)",
   publisher: "DrakoXNaeem Enterprise Systems",
+  verification: {
+    google: "Az7D687nqxA8jOie1RMCHHL1fn32VpR-nJGbd73qFjE", // Google Search Console Verification Tag
+  },
   robots: {
     index: true,
     follow: true,
