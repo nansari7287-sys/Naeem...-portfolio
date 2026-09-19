@@ -54,6 +54,7 @@ space-portfolio/
     |-- icon2.png
     |-- layout.tsx
     |-- page.tsx
+    |-- sitemap.ts
   |- components/
     |-- main/
     |-- sub/
