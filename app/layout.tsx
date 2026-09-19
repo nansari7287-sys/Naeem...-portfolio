@@ -1,6 +1,6 @@
 // ============================================================================
 // 📁 app/layout.tsx
-// 👑 MASTER ROOT LAYOUT ARCHITECTURE
+// 👑 MASTER ROOT LAYOUT ARCHITECTURE & SEO MATRIX
 // ============================================================================
 // AUTHOR: DrakoXNaeem (Md Naeem Ansari)
 // ROLE: Electrical Engineer & Full-Stack Systems Architect
@@ -55,32 +55,36 @@ export const viewport: Viewport = {
 };
 
 // ----------------------------------------------------------------------------
-// 🌐 GLOBAL METADATA OVERRIDES (DRAKOXNAEEM BRANDING & SEO MATRIX)
+// 🌐 GLOBAL METADATA OVERRIDES (DRAKOXNAEEM & NAEEM BRANDING & SEO MATRIX)
 // ----------------------------------------------------------------------------
 export const metadata: Metadata = {
   ...siteConfig,
   metadataBase: new URL("https://frexxy-portfolio-3dri.vercel.app"),
   title: {
-    default: "DrakoXNaeem | Elite Systems Architect",
-    template: "%s | DrakoXNaeem Portfolio",
+    default: "Naeem Ansari (DrakoXNaeem) | Elite Systems Architect",
+    template: "%s | Naeem Ansari (DrakoXNaeem) Portfolio",
   },
   description:
-    "Official portfolio of Md Naeem Ansari (DrakoXNaeem). Bridging Electrical Engineering hardware logic with advanced Python automation, Termux deployments, and highly scalable Telegram C2 bot networks.",
-  applicationName: "DrakoXNaeem Enterprise Systems",
+    "Official portfolio of Naeem Ansari (Md Naeem Ansari / DrakoXNaeem). Electrical Engineer bridging hardware logic with advanced Python automation, Termux deployments, and highly scalable Telegram C2 bot networks.",
+  applicationName: "Naeem Ansari (DrakoXNaeem) Enterprise Systems",
   generator: "Next.js 14",
   keywords: [
-    "DrakoXNaeem", 
-    "DrakoXNaeem Portfolio",
-    "Md Naeem Ansari", 
+    "Naeem",
     "Naeem Ansari",
-    "Electrical Engineer", 
-    "Telegram Bots", 
-    "Python", 
+    "Md Naeem Ansari",
+    "DrakoXNaeem",
+    "DrakoXNaeem Portfolio",
+    "Naeem Portfolio",
+    "Naeem Electrical Engineer",
+    "Naeem Systems Architect",
+    "Electrical Engineer",
+    "Telegram Bots",
+    "Python",
     "Termux Automation",
     "Systems Architect"
   ],
   authors: [{ name: "Md Naeem Ansari", url: "https://github.com/nansari7287-sys" }],
-  creator: "Md Naeem Ansari",
+  creator: "Md Naeem Ansari (DrakoXNaeem)",
   publisher: "DrakoXNaeem Enterprise Systems",
   robots: {
     index: true,
@@ -94,11 +98,11 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "DrakoXNaeem | Elite Systems Architect",
+    title: "Naeem Ansari (DrakoXNaeem) | Elite Systems Architect",
     description:
-      "Official portfolio of Md Naeem Ansari (DrakoXNaeem). Bridging Electrical Engineering hardware logic with advanced Python automation, Termux deployments, and highly scalable Telegram C2 bot networks.",
+      "Official portfolio of Naeem Ansari (Md Naeem Ansari / DrakoXNaeem). Bridging Electrical Engineering hardware logic with advanced Python automation, Termux deployments, and highly scalable Telegram C2 bot networks.",
     url: "https://frexxy-portfolio-3dri.vercel.app",
-    siteName: "DrakoXNaeem Enterprise Systems",
+    siteName: "Naeem Ansari (DrakoXNaeem) Portfolio",
     locale: "en_US",
     type: "website",
   },
@@ -108,14 +112,30 @@ export const metadata: Metadata = {
 // 🏗️ ROOT LAYOUT MAIN COMPONENT
 // ----------------------------------------------------------------------------
 export default function RootLayout({ children }: PropsWithChildren) {
+  // Google Person Schema for Knowledge Graph
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Naeem Ansari",
+    "alternateName": ["DrakoXNaeem", "Md Naeem Ansari", "Naeem"],
+    "url": "https://frexxy-portfolio-3dri.vercel.app",
+    "jobTitle": "Electrical Engineer & Systems Architect",
+    "sameAs": [
+      "https://github.com/nansari7287-sys",
+      "https://t.me/frexxxy",
+      "https://www.instagram.com/drakoxnaeem",
+      "https://www.facebook.com/share/1Dyr1kjXoM/"
+    ]
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
-      {/*
-        The body element acts as the primary container.
-        overflow-y-scroll: Prevents layout shift when scrollbar appears.
-        overflow-x-hidden: Prevents horizontal scrolling issues.
-        selection: Custom highlight color when text is selected by the user.
-      */}
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={cn(
           "bg-[#030014] text-gray-100 overflow-y-scroll overflow-x-hidden antialiased selection:bg-cyan-500/30 selection:text-cyan-200",
