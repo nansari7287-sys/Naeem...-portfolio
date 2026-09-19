@@ -55,10 +55,11 @@ export const viewport: Viewport = {
 };
 
 // ----------------------------------------------------------------------------
-// 🌐 GLOBAL METADATA OVERRIDES (DRAKOXNAEEM BRANDING)
+// 🌐 GLOBAL METADATA OVERRIDES (DRAKOXNAEEM BRANDING & SEO MATRIX)
 // ----------------------------------------------------------------------------
 export const metadata: Metadata = {
   ...siteConfig,
+  metadataBase: new URL("https://frexxy-portfolio-3dri.vercel.app"),
   title: {
     default: "DrakoXNaeem | Elite Systems Architect",
     template: "%s | DrakoXNaeem Portfolio",
@@ -69,7 +70,9 @@ export const metadata: Metadata = {
   generator: "Next.js 14",
   keywords: [
     "DrakoXNaeem", 
+    "DrakoXNaeem Portfolio",
     "Md Naeem Ansari", 
+    "Naeem Ansari",
     "Electrical Engineer", 
     "Telegram Bots", 
     "Python", 
@@ -78,6 +81,27 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Md Naeem Ansari", url: "https://github.com/nansari7287-sys" }],
   creator: "Md Naeem Ansari",
+  publisher: "DrakoXNaeem Enterprise Systems",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "DrakoXNaeem | Elite Systems Architect",
+    description:
+      "Official portfolio of Md Naeem Ansari (DrakoXNaeem). Bridging Electrical Engineering hardware logic with advanced Python automation, Termux deployments, and highly scalable Telegram C2 bot networks.",
+    url: "https://frexxy-portfolio-3dri.vercel.app",
+    siteName: "DrakoXNaeem Enterprise Systems",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 // ----------------------------------------------------------------------------
