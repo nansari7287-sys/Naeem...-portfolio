@@ -21,7 +21,7 @@ jobs:
   quality:
     name: Lint and production build
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
 
     steps:
       - name: Check out repository
@@ -33,8 +33,13 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install dependencies
+      - name: Install locked project dependencies
         run: npm ci
+
+      # eslint-plugin-react currently crashes under ESLint 10.
+      # Use the compatible ESLint 9 / TypeScript 5 toolchain for CI.
+      - name: Use compatible lint toolchain
+        run: npm install --no-save --package-lock=false eslint@^9.39.2 typescript@^5.9.3
 
       - name: Run ESLint
         run: npm run lint
