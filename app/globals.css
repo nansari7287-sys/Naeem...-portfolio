@@ -102,7 +102,11 @@ body :where(a, button):hover {
 .text-slate-400,
 .text-slate-300,
 .text-slate-500 {
-  color: #b4c8e8 !important;
+  color: #b9efff !important;
+  text-shadow:
+    0 0 5px rgba(103, 232, 249, 0.42),
+    0 0 13px rgba(34, 211, 238, 0.22),
+    0 0 24px rgba(139, 92, 246, 0.12) !important;
 }
 
 .text-white {
