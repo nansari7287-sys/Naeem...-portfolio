@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const ProjectCard = ({ src, title, description, link, status = "Personal project" }: Props) => (
-  <Link href={link} target="_blank" rel="noreferrer noopener" className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-cyan-300/25 bg-[#07071d]/85 shadow-[0_0_25px_rgba(34,211,238,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:border-fuchsia-300/55 hover:shadow-[0_0_28px_rgba(34,211,238,0.2),0_0_55px_rgba(168,85,247,0.13)]">
+  <Link href={link} target="_blank" rel="noreferrer noopener" className="neon-frame group relative flex h-full flex-col overflow-hidden rounded-2xl border border-cyan-300/35 bg-[#07071d]/85 shadow-[0_0_25px_rgba(34,211,238,0.08)] backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:scale-[1.015] hover:border-fuchsia-300/55 hover:shadow-[0_0_28px_rgba(34,211,238,0.2),0_0_55px_rgba(168,85,247,0.13)]">
     <div className="pointer-events-none absolute inset-x-8 top-0 z-20 h-px bg-gradient-to-r from-transparent via-cyan-200 to-fuchsia-300 opacity-70 shadow-[0_0_14px_rgba(103,232,249,0.8)]" />
     <div className="relative h-52 overflow-hidden border-b border-cyan-200/10 bg-gradient-to-br from-cyan-950/60 via-violet-950/60 to-fuchsia-950/50">
       <Image src={src} alt={title} width={1000} height={650} className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-110 group-hover:saturate-125" />
