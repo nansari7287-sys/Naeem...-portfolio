@@ -1,13 +1,22 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaGithub, FaGraduationCap, FaCode } from "react-icons/fa";
 import { PERSONAL_INFO } from "@/constants";
 
 const highlights = ["Android app projects", "Website design", "Telegram bots", "UI / UX"];
+const profilePhoto = "https://i.postimg.cc/Zn7m3T8F/project-2.jpg";
 
 export const HeroContent = () => {
+  const [photoClicks, setPhotoClicks] = useState(0);
+  const photoRevealed = photoClicks > 0;
+
+  const handlePhotoTap = () => {
+    setPhotoClicks((count) => (count >= 2 ? 0 : count + 1));
+  };
+
   return (
     <section
       id="home"
@@ -16,27 +25,25 @@ export const HeroContent = () => {
       <div className="pointer-events-none absolute left-1/4 top-1/4 h-64 w-64 rounded-full bg-cyan-500/15 blur-[110px] neon-float" />
       <div className="pointer-events-none absolute bottom-10 right-10 h-72 w-72 rounded-full bg-fuchsia-500/15 blur-[120px] neon-float" />
 
-      <div className="relative z-10 grid w-full items-center gap-12 lg:grid-cols-[1.25fr_0.75fr]">
+      <div className="relative z-10 grid w-full items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
         <motion.div
           initial={{ opacity: 0, y: 34, filter: "blur(12px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
-          className="rounded-[2rem] border border-cyan-400/25 bg-[#05051a]/70 p-6 shadow-[0_0_55px_rgba(34,211,238,0.12)] backdrop-blur-xl sm:p-10"
+          className="neon-frame rounded-[2rem] border border-cyan-300/30 bg-[#05051a]/75 p-6 shadow-[0_0_55px_rgba(34,211,238,0.14)] backdrop-blur-xl sm:p-10"
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-400/10 px-4 py-2 font-mono text-[11px] tracking-[0.18em] text-cyan-100 shadow-[0_0_22px_rgba(34,211,238,0.12)] sm:text-xs">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/50 bg-cyan-300/10 px-4 py-2 font-mono text-[11px] tracking-[0.18em] text-cyan-100 shadow-[0_0_22px_rgba(34,211,238,0.18)] sm:text-xs">
             <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-300 shadow-[0_0_12px_#67e8f9]" />
             PERSONAL PORTFOLIO
           </div>
 
           <p className="mb-3 font-mono text-sm tracking-[0.2em] text-purple-200">HELLO, I&apos;M</p>
           <h1 className="neon-flicker text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-7xl">
-            <span className="Welcome-text">
-              {PERSONAL_INFO.name}
-            </span>
+            <span className="Welcome-text">{PERSONAL_INFO.name}</span>
             <span className="block pt-3 text-3xl text-white sm:text-5xl">I love building digital things.</span>
           </h1>
 
-          <p className="mt-7 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+          <p className="mt-7 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
             I&apos;m an Electrical Engineering diploma student exploring Android app development,
             website design and Telegram bot projects. I learn by experimenting, building and improving.
           </p>
@@ -48,7 +55,7 @@ export const HeroContent = () => {
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.45 + index * 0.1, duration: 0.35 }}
-                className="rounded-full border border-fuchsia-400/30 bg-fuchsia-400/[0.08] px-3 py-2 text-xs text-fuchsia-100 shadow-[0_0_16px_rgba(217,70,239,0.1)] transition duration-300 hover:border-cyan-200/60 hover:bg-cyan-300/10 hover:shadow-[0_0_22px_rgba(34,211,238,0.2)] sm:text-sm"
+                className="rounded-full border border-fuchsia-300/40 bg-fuchsia-400/[0.09] px-3 py-2 text-xs font-medium text-fuchsia-100 shadow-[0_0_18px_rgba(217,70,239,0.14)] transition duration-300 hover:border-cyan-200/70 hover:bg-cyan-300/10 hover:shadow-[0_0_22px_rgba(34,211,238,0.25)] sm:text-sm"
               >
                 {item}
               </motion.span>
@@ -56,10 +63,10 @@ export const HeroContent = () => {
           </div>
 
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link href="#projects" className="button-primary inline-flex items-center gap-3 rounded-xl border border-cyan-200/50 px-6 py-3.5 text-sm font-bold text-cyan-50">
+            <Link href="#projects" className="button-primary inline-flex items-center gap-3 rounded-xl border border-cyan-200/60 px-6 py-3.5 text-sm font-bold text-cyan-50">
               Explore my projects <FaArrowRight />
             </Link>
-            <Link href="https://github.com/nansari7287-sys" target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-3 rounded-xl border border-violet-300/35 bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-violet-100 transition duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:text-cyan-100 hover:shadow-[0_0_25px_rgba(34,211,238,0.18)]">
+            <Link href="https://github.com/nansari7287-sys" target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-3 rounded-xl border border-violet-300/45 bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-violet-100 transition duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:text-cyan-100 hover:shadow-[0_0_25px_rgba(34,211,238,0.22)]">
               <FaGithub /> GitHub
             </Link>
           </div>
@@ -69,28 +76,66 @@ export const HeroContent = () => {
           initial={{ opacity: 0, x: 34, scale: 0.96 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto w-full max-w-md neon-float"
+          className="relative mx-auto flex w-full max-w-[390px] flex-col gap-7 neon-float"
         >
-          <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-br from-cyan-400/70 via-violet-500/50 to-fuchsia-500/70 opacity-75 blur-xl neon-pulse" />
-          <div className="relative rounded-[2rem] border border-cyan-200/35 bg-[#07071d]/90 p-7 shadow-[0_0_55px_rgba(139,92,246,0.2)] backdrop-blur-2xl sm:p-9">
-            <div className="mb-7 flex items-center justify-between">
-              <span className="font-mono text-xs tracking-[0.2em] text-cyan-100">PROFILE / 01</span>
-              <span className="rounded-full border border-emerald-300/35 bg-emerald-300/10 px-3 py-1 text-[10px] font-mono text-emerald-100 shadow-[0_0_14px_rgba(52,211,153,0.12)]">LEARNING & BUILDING</span>
+          <div className="absolute -inset-2 top-0 rounded-[2rem] bg-gradient-to-br from-cyan-400/50 via-violet-500/40 to-fuchsia-500/50 opacity-70 blur-2xl neon-pulse" />
+
+          <div className="neon-frame relative rounded-[2rem] border border-cyan-200/45 bg-[#07071d]/90 p-3 shadow-[0_0_45px_rgba(34,211,238,0.18),0_0_70px_rgba(168,85,247,0.12)] backdrop-blur-2xl">
+            <div className="mb-4 flex items-center justify-between px-2 pt-2">
+              <span className="font-mono text-xs tracking-[0.2em] text-cyan-100">IDENTITY / 01</span>
+              <span className="flex items-center gap-2 rounded-full border border-fuchsia-300/40 bg-fuchsia-300/10 px-3 py-1 font-mono text-[10px] text-fuchsia-100 shadow-[0_0_16px_rgba(240,171,252,0.18)]">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-fuchsia-300" /> ACTIVE
+              </span>
             </div>
-            <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-cyan-300/40 bg-cyan-300/10 text-3xl text-cyan-100 shadow-[0_0_28px_rgba(34,211,238,0.22)]">
+
+            <button
+              type="button"
+              onClick={handlePhotoTap}
+              aria-label={photoRevealed ? "Tap to lock profile photo" : "Tap to reveal profile photo"}
+              className="group relative block w-full overflow-hidden rounded-[1.5rem] border border-cyan-200/35 bg-black text-left shadow-[0_0_28px_rgba(34,211,238,0.2)] focus-visible:outline-cyan-200"
+            >
+              <div className="relative aspect-[4/5] w-full">
+                <img
+                  src={profilePhoto}
+                  alt="Naeem profile"
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                  draggable={false}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04] group-hover:brightness-110"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/10" />
+                <div className={`absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#030014]/80 px-4 text-center backdrop-blur-md transition-all duration-500 ${photoRevealed ? "pointer-events-none -translate-y-8 opacity-0" : "translate-y-0 opacity-100"}`}>
+                  <span className="font-mono text-[10px] tracking-[0.28em] text-cyan-200">IDENTITY LOCKED</span>
+                  <h2 className="Welcome-text mt-4 text-3xl font-black tracking-wider sm:text-4xl">𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎</h2>
+                  <span className="mt-5 rounded-full border border-cyan-300/50 bg-cyan-950/70 px-4 py-2 font-mono text-[10px] tracking-[0.18em] text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.3)] animate-pulse">[ TAP TO REVEAL ]</span>
+                </div>
+                <div className={`absolute bottom-0 left-0 z-20 w-full bg-gradient-to-t from-black via-black/75 to-transparent p-5 text-center transition-all duration-500 ${photoRevealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
+                  <h2 className="Welcome-text text-2xl font-black tracking-wider sm:text-3xl">𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎</h2>
+                  <p className="mt-2 font-mono text-xs tracking-[0.3em] text-cyan-100">𝑵𝒂𝒆𝒆𝒎</p>
+                  <span className="mt-2 block text-[9px] tracking-[0.18em] text-fuchsia-200">TAP AGAIN TO LOCK</span>
+                </div>
+              </div>
+            </button>
+            <p className="px-2 pb-1 pt-3 text-center font-mono text-[9px] tracking-[0.16em] text-cyan-100/70">NEON IDENTITY INTERFACE • INTERACTIVE PHOTO</p>
+          </div>
+
+          <div className="neon-frame relative rounded-[2rem] border border-violet-300/40 bg-[#07071d]/95 p-6 shadow-[0_0_38px_rgba(139,92,246,0.2),inset_0_0_24px_rgba(34,211,238,0.04)] backdrop-blur-2xl sm:p-7">
+            <div className="mb-5 flex items-center justify-between">
+              <span className="font-mono text-[10px] tracking-[0.22em] text-fuchsia-100">PROFILE / 02</span>
+              <span className="rounded-full border border-emerald-300/40 bg-emerald-300/10 px-3 py-1 text-[9px] font-mono text-emerald-100 shadow-[0_0_14px_rgba(52,211,153,0.18)]">LEARNING & BUILDING</span>
+            </div>
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-300/45 bg-cyan-300/10 text-2xl text-cyan-100 shadow-[0_0_28px_rgba(34,211,238,0.25)]">
               <FaGraduationCap />
             </div>
-            <h2 className="text-2xl font-bold text-white">Education</h2>
-            <p className="mt-3 leading-7 text-slate-300">{PERSONAL_INFO.branch}</p>
-            <p className="mt-1 text-sm leading-6 text-cyan-100">{PERSONAL_INFO.institute}</p>
-            <div className="my-7 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-fuchsia-300/50 shadow-[0_0_12px_rgba(103,232,249,0.4)]" />
-            <div className="flex items-center gap-3 text-sm text-slate-300">
-              <FaCode className="text-fuchsia-200" />
+            <h2 className="text-2xl font-black text-white">Education</h2>
+            <p className="mt-3 text-base font-semibold leading-7 text-cyan-100">{PERSONAL_INFO.branch}</p>
+            <p className="mt-1 text-sm leading-6 text-violet-100">{PERSONAL_INFO.institute}</p>
+            <div className="my-5 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-fuchsia-300/70 shadow-[0_0_14px_rgba(103,232,249,0.55)]" />
+            <div className="flex items-center gap-3 text-sm text-slate-200">
+              <FaCode className="text-fuchsia-200 drop-shadow-[0_0_8px_rgba(240,171,252,0.8)]" />
               Independent projects & continuous learning
             </div>
-            <p className="mt-5 font-mono text-[11px] leading-6 tracking-[0.2em] text-cyan-100/70">
-              BUILD • LEARN • IMPROVE
-            </p>
+            <p className="mt-4 font-mono text-[10px] leading-6 tracking-[0.2em] text-cyan-100/80">BUILD • LEARN • IMPROVE</p>
           </div>
         </motion.aside>
       </div>
