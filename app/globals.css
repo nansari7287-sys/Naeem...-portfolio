@@ -48,6 +48,15 @@ button:focus-visible,a:focus-visible { outline: 2px solid var(--cyan); outline-o
   animation: premium-shift 9s ease-in-out infinite alternate;
   filter: drop-shadow(0 0 12px rgba(103,232,249,.18));
 }
+/* Luminous body copy: visible neon lettering while keeping long text readable. */
+.neon-copy {
+  color: #c4f3ff;
+  text-shadow:
+    0 0 1px rgba(220, 252, 255, .8),
+    0 0 9px rgba(34, 211, 238, .28),
+    0 0 20px rgba(103, 232, 249, .12);
+}
+
 .Welcome-box {
   display: inline-flex;
   align-items: center;
