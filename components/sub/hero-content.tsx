@@ -25,37 +25,37 @@ export const HeroContent = () => {
       <div className="pointer-events-none absolute left-1/4 top-1/4 h-64 w-64 rounded-full bg-cyan-500/15 blur-[110px] neon-float" />
       <div className="pointer-events-none absolute bottom-10 right-10 h-72 w-72 rounded-full bg-fuchsia-500/15 blur-[120px] neon-float" />
 
-      <div className="relative z-10 grid w-full items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="relative z-10 grid w-full items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
         <motion.div
           initial={{ opacity: 0, y: 34, filter: "blur(12px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
-          className="relative py-4 sm:py-8 lg:pr-8"
+          className="relative py-4 sm:py-8 lg:pr-4"
         >
           <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-200/20 bg-cyan-300/[0.06] px-4 py-2.5 font-mono text-[10px] tracking-[0.22em] text-cyan-100 sm:text-xs">
             <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-300 shadow-[0_0_12px_#67e8f9]" />
             PERSONAL PORTFOLIO
           </div>
 
-          <p className="mb-3 font-mono text-sm tracking-[0.2em] text-purple-200">HELLO, I&apos;M</p>
-          <h1 className="text-5xl font-bold leading-[1.02] tracking-[-0.06em] text-white sm:text-7xl lg:text-[5.6rem]">
+          <p className="mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.28em] text-cyan-100/90 sm:text-sm"><span className="h-px w-8 bg-gradient-to-r from-cyan-300 to-violet-300" /> HELLO, I&apos;M</p>
+          <h1 className="text-5xl font-bold leading-[1.02] tracking-[-0.065em] text-white sm:text-7xl lg:text-[5.2rem]">
             <span className="Welcome-text">{PERSONAL_INFO.name}</span>
-            <span className="Welcome-text mt-4 block max-w-2xl text-2xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl">Engineering mind. Creative builds.</span>
+            <span className="Welcome-text mt-4 block max-w-2xl text-[1.65rem] font-semibold leading-tight tracking-[-0.045em] sm:text-4xl">Engineering mind. Creative builds.</span>
           </h1>
 
-          <p className="neon-copy mt-7 max-w-xl text-base leading-8 sm:text-lg">
+          <p className="neon-copy mt-7 max-w-xl text-[15px] leading-[1.9] sm:text-lg">
             I&apos;m an Electrical Engineering diploma student exploring Android app development,
             website design and Telegram bot projects. I learn by experimenting, building and improving.
           </p>
 
-          <div className="mt-7 flex flex-wrap gap-2">
+          <div className="mt-7 flex flex-wrap gap-2.5">
             {highlights.map((item, index) => (
               <motion.span
                 key={item}
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.45 + index * 0.1, duration: 0.35 }}
-                className="rounded-full border border-white/10 bg-white/[0.035] px-3.5 py-2 text-xs font-medium text-slate-200 transition duration-300 hover:border-cyan-200/40 hover:bg-cyan-300/[0.06] hover:text-cyan-100 sm:text-sm"
+                className="rounded-full border border-cyan-100/15 bg-slate-100/[0.035] px-4 py-2.5 text-xs font-medium text-cyan-50/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-300 hover:-translate-y-0.5 hover:border-cyan-200/45 hover:bg-cyan-300/[0.07] hover:text-white sm:text-sm"
               >
                 {item}
               </motion.span>
@@ -76,12 +76,12 @@ export const HeroContent = () => {
           initial={{ opacity: 0, x: 34, scale: 0.96 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto flex w-full max-w-[320px] flex-col gap-5 sm:max-w-[350px]"
+          className="relative mx-auto flex w-full max-w-[360px] flex-col gap-5 sm:max-w-[390px]"
         >
           <div className="pointer-events-none absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-cyan-400/10 via-violet-500/[0.08] to-fuchsia-500/10 blur-3xl" />
 
-          <div className="neon-frame relative rounded-[1.6rem] border border-white/10 bg-[#0a1020]/90 p-2.5 backdrop-blur-2xl">
-            <div className="mb-4 flex items-center justify-between px-2 pt-2">
+          <div className="identity-frame relative rounded-[2rem] p-3 sm:p-3.5">
+            <div className="identity-topline mb-3 flex items-center justify-between px-2 pt-1">
               <span className="font-mono text-xs tracking-[0.2em] text-cyan-100">IDENTITY / 01</span>
               <span className="flex items-center gap-2 rounded-full border border-fuchsia-300/40 bg-fuchsia-300/10 px-3 py-1 font-mono text-[10px] text-fuchsia-100 shadow-[0_0_16px_rgba(240,171,252,0.18)]">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-fuchsia-300" /> ACTIVE
@@ -92,9 +92,9 @@ export const HeroContent = () => {
               type="button"
               onClick={handlePhotoTap}
               aria-label={photoRevealed ? "Tap to lock profile photo" : "Tap to reveal profile photo"}
-              className="group relative block w-full overflow-hidden rounded-[1.5rem] border border-cyan-200/35 bg-black text-left shadow-[0_0_28px_rgba(34,211,238,0.2)] focus-visible:outline-cyan-200"
+              className="identity-photo group relative block w-full overflow-hidden rounded-[1.45rem] border bg-black text-left focus-visible:outline-cyan-200"
             >
-              <div className="relative aspect-[1/1] w-full">
+              <div className="relative aspect-[4/4.35] w-full">
                 <img
                   src={profilePhoto}
                   alt="Naeem profile"
@@ -116,10 +116,10 @@ export const HeroContent = () => {
                 </div>
               </div>
             </button>
-            <p className="px-2 pb-1 pt-3 text-center font-mono text-[9px] tracking-[0.16em] text-cyan-100/70">NEON IDENTITY INTERFACE • INTERACTIVE PHOTO</p>
+            <div className="identity-bottomline mt-3 flex items-center justify-between px-2 pb-1 pt-1"><span className="font-mono text-[9px] tracking-[0.16em] text-cyan-100/70">NAEEM / PROFILE</span><span className="font-mono text-[9px] tracking-[0.16em] text-violet-100/70">01 — 02</span></div>
           </div>
 
-          <div className="neon-frame relative rounded-[1.8rem] border border-white/10 bg-[#0a1020]/90 p-6 backdrop-blur-2xl sm:p-7">
+          <div className="profile-glass relative rounded-[1.7rem] p-6 sm:p-7">
             <div className="mb-5 flex items-center justify-between">
               <span className="font-mono text-[10px] tracking-[0.22em] text-fuchsia-100">PROFILE / 02</span>
               <span className="rounded-full border border-emerald-300/40 bg-emerald-300/10 px-3 py-1 text-[9px] font-mono text-emerald-100 shadow-[0_0_14px_rgba(52,211,153,0.18)]">LEARNING & BUILDING</span>
