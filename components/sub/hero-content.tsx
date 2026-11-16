@@ -30,20 +30,20 @@ export const HeroContent = () => {
           initial={{ opacity: 0, y: 34, filter: "blur(12px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
-          className="neon-frame rounded-[2rem] border border-cyan-300/30 bg-[#05051a]/75 p-6 shadow-[0_0_55px_rgba(34,211,238,0.14)] backdrop-blur-xl sm:p-10"
+          className="relative py-4 sm:py-8 lg:pr-8"
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/50 bg-cyan-300/10 px-4 py-2 font-mono text-[11px] tracking-[0.18em] text-cyan-100 shadow-[0_0_22px_rgba(34,211,238,0.18)] sm:text-xs">
+          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-200/20 bg-cyan-300/[0.06] px-4 py-2.5 font-mono text-[10px] tracking-[0.22em] text-cyan-100 sm:text-xs">
             <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-300 shadow-[0_0_12px_#67e8f9]" />
             PERSONAL PORTFOLIO
           </div>
 
           <p className="mb-3 font-mono text-sm tracking-[0.2em] text-purple-200">HELLO, I&apos;M</p>
-          <h1 className="neon-flicker text-5xl font-black leading-[1.05] tracking-tight text-white sm:text-7xl">
+          <h1 className="text-5xl font-bold leading-[1.02] tracking-[-0.06em] text-white sm:text-7xl lg:text-[5.6rem]">
             <span className="Welcome-text">{PERSONAL_INFO.name}</span>
-            <span className="block pt-3 text-3xl text-white sm:text-5xl">I love building digital things.</span>
+            <span className="mt-4 block max-w-2xl text-2xl font-medium leading-tight tracking-[-0.04em] text-slate-200 sm:text-4xl">Engineering mind. <span className="Welcome-text font-semibold">Creative builds.</span></span>
           </h1>
 
-          <p className="mt-7 max-w-2xl text-base leading-8 text-slate-200 sm:text-lg">
+          <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
             I&apos;m an Electrical Engineering diploma student exploring Android app development,
             website design and Telegram bot projects. I learn by experimenting, building and improving.
           </p>
@@ -55,7 +55,7 @@ export const HeroContent = () => {
                 initial={{ opacity: 0, scale: 0.85 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.45 + index * 0.1, duration: 0.35 }}
-                className="rounded-full border border-fuchsia-300/40 bg-fuchsia-400/[0.09] px-3 py-2 text-xs font-medium text-fuchsia-100 shadow-[0_0_18px_rgba(217,70,239,0.14)] transition duration-300 hover:border-cyan-200/70 hover:bg-cyan-300/10 hover:shadow-[0_0_22px_rgba(34,211,238,0.25)] sm:text-sm"
+                className="rounded-full border border-white/10 bg-white/[0.035] px-3.5 py-2 text-xs font-medium text-slate-200 transition duration-300 hover:border-cyan-200/40 hover:bg-cyan-300/[0.06] hover:text-cyan-100 sm:text-sm"
               >
                 {item}
               </motion.span>
@@ -76,11 +76,11 @@ export const HeroContent = () => {
           initial={{ opacity: 0, x: 34, scale: 0.96 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto flex w-full max-w-[390px] flex-col gap-7 neon-float"
+          className="relative mx-auto flex w-full max-w-[390px] flex-col gap-6"
         >
-          <div className="absolute -inset-2 top-0 rounded-[2rem] bg-gradient-to-br from-cyan-400/50 via-violet-500/40 to-fuchsia-500/50 opacity-70 blur-2xl neon-pulse" />
+          <div className="pointer-events-none absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-cyan-400/10 via-violet-500/[0.08] to-fuchsia-500/10 blur-3xl" />
 
-          <div className="neon-frame relative rounded-[2rem] border border-cyan-200/45 bg-[#07071d]/90 p-3 shadow-[0_0_45px_rgba(34,211,238,0.18),0_0_70px_rgba(168,85,247,0.12)] backdrop-blur-2xl">
+          <div className="neon-frame relative rounded-[1.8rem] border border-white/10 bg-[#0a1020]/90 p-3 backdrop-blur-2xl">
             <div className="mb-4 flex items-center justify-between px-2 pt-2">
               <span className="font-mono text-xs tracking-[0.2em] text-cyan-100">IDENTITY / 01</span>
               <span className="flex items-center gap-2 rounded-full border border-fuchsia-300/40 bg-fuchsia-300/10 px-3 py-1 font-mono text-[10px] text-fuchsia-100 shadow-[0_0_16px_rgba(240,171,252,0.18)]">
@@ -119,7 +119,7 @@ export const HeroContent = () => {
             <p className="px-2 pb-1 pt-3 text-center font-mono text-[9px] tracking-[0.16em] text-cyan-100/70">NEON IDENTITY INTERFACE • INTERACTIVE PHOTO</p>
           </div>
 
-          <div className="neon-frame relative rounded-[2rem] border border-violet-300/40 bg-[#07071d]/95 p-6 shadow-[0_0_38px_rgba(139,92,246,0.2),inset_0_0_24px_rgba(34,211,238,0.04)] backdrop-blur-2xl sm:p-7">
+          <div className="neon-frame relative rounded-[1.8rem] border border-white/10 bg-[#0a1020]/90 p-6 backdrop-blur-2xl sm:p-7">
             <div className="mb-5 flex items-center justify-between">
               <span className="font-mono text-[10px] tracking-[0.22em] text-fuchsia-100">PROFILE / 02</span>
               <span className="rounded-full border border-emerald-300/40 bg-emerald-300/10 px-3 py-1 text-[9px] font-mono text-emerald-100 shadow-[0_0_14px_rgba(52,211,153,0.18)]">LEARNING & BUILDING</span>
