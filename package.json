@@ -9,62 +9,32 @@
     "lint": "eslint ."
   },
   "author": {
-    "name": "Sanidhya Kumar Verma",
-    "email": "sanidhya.verma12345@gmail.com",
-    "url": "https://github.com/sanidhyy"
+    "name": "Naeem",
+    "url": "https://github.com/nansari7287-sys"
   },
-  "description": "Welcome to my full stack Next.js 14 space portfolio.",
+  "description": "Personal portfolio of Naeem, featuring education, interests and independent digital projects.",
   "keywords": [
-    "reactjs",
+    "naeem",
+    "personal-portfolio",
+    "electrical-engineering",
+    "android-projects",
+    "website-design",
+    "telegram-bots",
     "nextjs",
-    "vercel",
     "react",
-    "space-portfolio",
-    "portfolio",
-    "react-icons",
-    "cn",
-    "clsx",
-    "3d-portfolio",
-    "3d-website",
-    "sonner",
-    "framer-motion",
-    "motion",
-    "animation",
-    "heroicons",
-    "next-themes",
-    "postcss",
-    "prettier",
-    "react-dom",
-    "tailwindcss",
-    "tailwindcss-animate",
-    "ui/ux",
-    "js",
-    "javascript",
     "typescript",
-    "eslint",
-    "html",
-    "css"
+    "tailwindcss",
+    "threejs"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sanidhyy/space-portfolioit"
+    "url": "https://github.com/nansari7287-sys/Naeem...-portfolio.git"
   },
-  "homepage": "https://github.com/sanidhyy/space-portfolio#readme",
+  "homepage": "https://drakoxnaeem.vercel.app/",
   "bugs": {
-    "url": "https://github.com/sanidhyy/space-portfolio/issues",
-    "email": "sanidhya.verma12345@gmail.com"
+    "url": "https://github.com/nansari7287-sys/Naeem...-portfolio/issues"
   },
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/sanidhy"
-    },
-    {
-      "type": "Buy me a coffee",
-      "url": "https://www.buymeacoffee.com/sanidhy"
-    }
-  ],
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@react-three/drei": "^10.7.7",

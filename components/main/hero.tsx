@@ -1,18 +1,11 @@
 import { HeroContent } from "@/components/sub/hero-content";
 
-export const Hero = () => {
-  return (
-    <div className="relative flex flex-col h-full w-full">
-      <video
-        autoPlay
-        muted
-        loop
-        className="rotate-180 absolute top-[-340px] left-0 w-full h-full object-cover -z-20"
-      >
-        <source src="/videos/blackhole.webm" type="video/webm" />
-      </video>
-
-      <HeroContent />
-    </div>
-  );
-};
+export const Hero = () => (
+  <div className="relative w-full">
+    <video autoPlay muted loop playsInline preload="metadata" aria-hidden="true" className="pointer-events-none absolute left-0 top-0 -z-20 h-[780px] w-full rotate-180 object-cover opacity-50">
+      <source src="/videos/blackhole.webm" type="video/webm" />
+    </video>
+    <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-[#030014]/10 via-[#030014]/25 to-[#030014]" />
+    <HeroContent />
+  </div>
+);

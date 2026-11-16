@@ -1,244 +1,145 @@
-// ============================================================================
-// 📁 components/sub/hero-content.tsx
-// 👑 VIP ENTERPRISE HERO COMPONENT (FULL NEON STYLING + URL PHOTO FIX)
-// ============================================================================
-
 "use client";
 
-import React, { useState } from "react";
-import { SparklesIcon } from "@heroicons/react/24/solid";
-import { motion } from "framer-motion";
+import { useState } from "react";
 import Link from "next/link";
-import { slideInFromLeft, slideInFromRight, slideInFromTop } from "@/lib/motion";
+import { motion } from "framer-motion";
+import { FaArrowRight, FaGithub, FaGraduationCap, FaCode } from "react-icons/fa";
+import { PERSONAL_INFO } from "@/constants";
+
+const highlights = ["Android app projects", "Website design", "Telegram bots", "UI / UX"];
+const profilePhoto = "https://i.postimg.cc/Zn7m3T8F/project-2.jpg";
 
 export const HeroContent = () => {
-  // 🔹 State controlling the 3-click reveal / lock cycle of the Identity Card
-  const [clickCount, setClickCount] = useState<number>(0);
+  const [photoClicks, setPhotoClicks] = useState(0);
+  const photoRevealed = photoClicks > 0;
 
-  // 🔹 Interaction Handler: Tap 1 opens, Tap 2 maintains, Tap 3 locks back.
-  const handleCardInteraction = () => {
-    setClickCount((prev) => {
-      const nextCount = prev + 1;
-      if (nextCount >= 3) {
-        return 0; // Locks and resets on the 3rd click
-      }
-      return nextCount; // 1 = Opened, 2 = Maintains Open State
-    });
+  const handlePhotoTap = () => {
+    setPhotoClicks((count) => (count >= 2 ? 0 : count + 1));
   };
 
-  const isRevealed = clickCount > 0;
-
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      className="flex flex-col lg:flex-row items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 mt-4 md:mt-14 pt-8 w-full z-[50] gap-12 lg:gap-8 max-w-[1600px] mx-auto relative"
+    <section
+      id="home"
+      className="relative mx-auto flex min-h-[90vh] w-full max-w-[1440px] items-center px-5 pb-16 pt-28 sm:px-8 lg:px-14"
     >
-      
-      {/* 
-        =======================================================================
-        🌟 LEFT COLUMN: TYPOGRAPHY, BIO & VIBRANT TAGS
-        =======================================================================
-      */}
-      <div className="h-full w-full flex flex-col gap-6 justify-center m-auto text-start lg:w-[58%] relative z-[60]">
-        
-        {/* 🌌 BALANCED DARK GLASS SHIELD */}
-        <div className="bg-[#030014]/45 backdrop-blur-md p-5 sm:p-8 rounded-3xl border border-purple-500/30 shadow-[0_0_35px_rgba(0,0,0,0.7)] relative z-20">
-          
-          {/* 🔹 Top Welcome Badge */}
-          <motion.div
-            variants={slideInFromTop}
-            className="py-2 px-4 border border-cyan-500/60 rounded-xl bg-[#030014]/80 shadow-[0_0_20px_rgba(6,182,212,0.5)] flex items-center w-fit mb-5"
-          >
-            <SparklesIcon className="text-cyan-400 mr-2.5 h-4 w-4 md:h-5 md:w-5 animate-pulse" />
-            <h1 className="text-[13px] md:text-[15px] font-mono tracking-wider uppercase text-gray-100 font-extrabold flex items-center gap-2">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 text-base md:text-lg drop-shadow-[0_0_8px_rgba(6,182,212,0.8)]">
-                𝑵𝒂𝒆𝒆𝒎
-              </span> 
-              <span className="text-gray-300">// Electrical Engineer & Architect</span>
-            </h1>
-          </motion.div>
+      <div className="pointer-events-none absolute left-1/4 top-1/4 h-64 w-64 rounded-full bg-cyan-500/15 blur-[110px] neon-float" />
+      <div className="pointer-events-none absolute bottom-10 right-10 h-72 w-72 rounded-full bg-fuchsia-500/15 blur-[120px] neon-float" />
 
-          {/* 🔹 Main Headline: Perfectly Aligned & Spaced with 100% Neon Glow */}
-          <motion.div
-            variants={slideInFromLeft(0.5)}
-            className="flex flex-col gap-3 text-4xl sm:text-6xl lg:text-[72px] font-black text-white max-w-[850px] w-auto h-auto leading-[1.12] tracking-tight py-1"
-          >
-            <span className="drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)]">
-              Building{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 drop-shadow-[0_0_25px_rgba(112,66,248,0.9)]">
-                powerful digital systems
-              </span>{" "}
-              with{" "}
-              <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 tracking-normal drop-shadow-[0_0_30px_rgba(6,182,212,1)] text-[48px] sm:text-[72px] lg:text-[86px] inline-block py-2">
-                𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎.
-              </span>
-            </span>
-          </motion.div>
-
-          {/* 🔹 Biography with Al-Kabir Highlights */}
-          <motion.p
-            variants={slideInFromLeft(0.8)}
-            className="text-[15px] sm:text-base md:text-[17px] text-gray-200 mt-4 mb-6 max-w-[700px] leading-relaxed font-medium drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
-          >
-            I am <strong className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400 font-black text-xl mr-1 drop-shadow-[0_0_10px_rgba(112,66,248,0.8)]">𝑵𝒂𝒆𝒆𝒎</strong>, 
-            pursuing a Diploma in <strong className="text-pink-400 font-bold">Electrical Engg.</strong> at{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-pink-500 to-cyan-400 font-extrabold drop-shadow-[0_0_15px_rgba(244,114,182,0.9)] text-base md:text-lg border-b border-pink-500/60 pb-0.5 inline-block">
-              Al-Kabir Institute of Management and Technology
-            </span>. 
-            I seamlessly blend core hardware electrical logic with advanced software automation. My expertise spans across engineering scalable{" "}
-            <strong className="text-purple-400 font-bold">Telegram C2 networks</strong>, 
-            backend architectures, and executing precision{" "}
-            <strong className="text-cyan-400 font-bold">Python automation via Termux</strong>.
-          </motion.p>
-
-          {/* 🔹 Technical Feature Badges */}
-          <motion.div 
-            variants={slideInFromLeft(0.9)}
-            className="flex flex-wrap gap-2.5 my-2"
-          >
-            {[
-              { name: "Python 3 Automation", color: "from-cyan-400 to-blue-500" },
-              { name: "Termux Linux OS", color: "from-green-400 to-emerald-500" },
-              { name: "Telegram C2 Networks", color: "from-purple-400 to-pink-500" },
-              { name: "Electrical Engg.", color: "from-amber-400 to-orange-500" },
-              { name: "High Performance & Security", color: "from-emerald-400 via-cyan-400 to-blue-500" }
-            ].map((tag, idx) => (
-              <span 
-                key={idx}
-                className="text-[11px] md:text-[12px] font-bold font-mono px-4 py-2 rounded-full bg-[#030014]/90 border border-white/20 text-gray-100 shadow-[0_0_10px_rgba(0,0,0,0.6)] hover:border-cyan-400 transition-all cursor-default flex items-center gap-1.5"
-              >
-                <span className={`text-transparent bg-clip-text bg-gradient-to-r ${tag.color} font-black text-sm`}>⚡</span>
-                <span>{tag.name}</span>
-              </span>
-            ))}
-          </motion.div>
-
-          {/* 🔹 Action Buttons */}
-          <motion.div
-            variants={slideInFromLeft(1)}
-            className="flex flex-row flex-wrap items-center gap-4 mt-7"
-          >
-            <Link
-              href="#projects"
-              className="py-3.5 px-8 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 text-center text-white font-extrabold tracking-widest uppercase text-xs md:text-sm cursor-pointer rounded-xl shadow-[0_0_25px_rgba(112,66,248,0.8)] hover:shadow-[0_0_40px_rgba(6,182,212,1)] hover:scale-105 transition-all duration-300 border border-white/30"
-            >
-              Explore Systems
-            </Link>
-            
-            <Link
-              href="https://github.com/nansari7287-sys"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="py-3.5 px-8 bg-[#030014]/90 border border-white/20 hover:border-cyan-400 text-center text-gray-100 font-mono text-xs md:text-sm cursor-pointer rounded-xl transition-all duration-300 flex items-center justify-center gap-2.5 group hover:shadow-[0_0_25px_rgba(6,182,212,0.5)]"
-            >
-              <span className="text-purple-400 group-hover:text-cyan-400 transition-colors text-lg font-black">&lt;/&gt;</span>
-              <span className="tracking-widest uppercase font-bold">Developer Core</span>
-            </Link>
-          </motion.div>
-
-        </div>
-      </div>
-
-      {/* 
-        =======================================================================
-        🚀 RIGHT COLUMN: VIP INTERACTIVE CYBERPUNK IDENTITY CARD 
-        =======================================================================
-      */}
-      <motion.div
-        variants={slideInFromRight(0.8)}
-        className="w-full h-full flex justify-center items-center relative lg:w-[38%] mt-8 lg:mt-0 z-[45]"
-      >
-        {/* Glow behind card */}
-        <div className="absolute w-[260px] h-[260px] md:w-[420px] md:h-[420px] bg-gradient-to-tr from-cyan-500/40 via-purple-600/40 to-pink-500/40 rounded-full blur-[100px] md:blur-[130px] pointer-events-none z-0"></div>
-        
-        {/* 🔹 Interactive Profile Card (Touch/Click Controlled) */}
-        <div 
-          onClick={handleCardInteraction}
-          className="relative flex flex-col p-3 rounded-[32px] border border-cyan-500/50 bg-[#030014]/80 backdrop-blur-3xl shadow-[0_0_55px_rgba(112,66,248,0.5)] group hover:border-cyan-400 transition-all duration-500 z-10 w-full max-w-[320px] md:max-w-[380px] cursor-pointer select-none active:scale-[0.98]"
+      <div className="relative z-10 grid w-full items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
+        <motion.div
+          initial={{ opacity: 0, y: 34, filter: "blur(12px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.95, ease: [0.16, 1, 0.3, 1] }}
+          className="relative py-4 sm:py-8 lg:pr-4"
         >
-          
-          {/* Status Badges */}
-          <div className="absolute -top-4 left-5 bg-cyan-950 border border-cyan-400/80 px-4 py-1.5 rounded-full text-[11px] font-mono tracking-widest text-cyan-300 shadow-[0_0_20px_rgba(6,182,212,0.8)] z-30 font-bold uppercase flex items-center gap-1.5">
-            <span>SYS_ARCHITECT</span>
-            {isRevealed && (
-              <span className="text-[9px] bg-cyan-500/20 px-1.5 py-0.5 rounded text-cyan-300">
-                {clickCount}/3
-              </span>
-            )}
-          </div>
-          
-          <div className="absolute -top-4 right-5 bg-pink-950 border border-pink-400/80 px-4 py-1.5 rounded-full text-[11px] font-mono tracking-widest text-pink-300 shadow-[0_0_20px_rgba(244,114,182,0.8)] z-30 font-bold uppercase flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-pink-400 animate-pulse"></span>
-            ACTIVE
+          <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-200/20 bg-cyan-300/[0.06] px-4 py-2.5 font-mono text-[10px] tracking-[0.22em] text-cyan-100 sm:text-xs">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-300 shadow-[0_0_12px_#67e8f9]" />
+            PERSONAL PORTFOLIO
           </div>
 
-          {/* 🔹 Image Container with Permanent URL Loader */}
-          <div className="w-full aspect-[4/5] rounded-[24px] overflow-hidden border border-white/20 relative bg-black">
-            
-            {/* 🖼️ URL SET DIRECTLY TO AVOID FLICKER/CACHE ISSUES */}
-            <img
-              src="https://i.postimg.cc/Zn7m3T8F/project-2.jpg" 
-              alt="𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 Official Identity"
-              loading="eager"
-              className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110"
-              style={{ display: 'block', width: '100%', height: '100%' }}
-              referrerPolicy="no-referrer"
-              crossOrigin="anonymous"
-              draggable={false}
-            />
-            
-            {/* 
-              =================================================================
-              🔥 3-CLICK CONTROLLED COVER OVERLAY (ORIGINAL NEON STYLING)
-              =================================================================
-            */}
-            
-            {/* STATE 1: INITIAL COVER (Visible when clickCount === 0) */}
-            <div className={`absolute inset-0 bg-black/80 backdrop-blur-md flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
-              isRevealed ? "opacity-0 pointer-events-none -translate-y-10" : "opacity-100 pointer-events-auto translate-y-0"
-            } z-20 px-4 text-center`}>
-              <h2 className="text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-400 drop-shadow-[0_0_25px_rgba(112,66,248,1)] tracking-wider">
-                𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎
-              </h2>
-              <div className="text-cyan-400 font-mono text-[10px] md:text-xs mt-3 tracking-widest border border-cyan-400/50 px-3.5 py-1.5 rounded-full bg-cyan-950/40 shadow-[0_0_15px_rgba(6,182,212,0.6)] animate-pulse">
-                [ 1 CLICK TO REVEAL ]
-              </div>
+          <p className="mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.28em] text-cyan-100/90 sm:text-sm"><span className="h-px w-8 bg-gradient-to-r from-cyan-300 to-violet-300" /> HELLO, I&apos;M</p>
+          <h1 className="text-5xl font-bold leading-[1.02] tracking-[-0.065em] text-white sm:text-7xl lg:text-[5.2rem]">
+            <span className="Welcome-text">{PERSONAL_INFO.name}</span>
+            <span className="Welcome-text mt-4 block max-w-2xl text-[1.65rem] font-semibold leading-tight tracking-[-0.045em] sm:text-4xl">Engineering mind. Creative builds.</span>
+          </h1>
+
+          <p className="neon-copy mt-7 max-w-xl text-[15px] leading-[1.9] sm:text-lg">
+            I&apos;m an Electrical Engineering diploma student exploring Android app development,
+            website design and Telegram bot projects. I learn by experimenting, building and improving.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-2.5">
+            {highlights.map((item, index) => (
+              <motion.span
+                key={item}
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.45 + index * 0.1, duration: 0.35 }}
+                className="rounded-full border border-cyan-100/15 bg-slate-100/[0.035] px-4 py-2.5 text-xs font-medium text-cyan-50/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] transition duration-300 hover:-translate-y-0.5 hover:border-cyan-200/45 hover:bg-cyan-300/[0.07] hover:text-white sm:text-sm"
+              >
+                {item}
+              </motion.span>
+            ))}
+          </div>
+
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link href="#projects" className="button-primary inline-flex items-center gap-3 rounded-xl border border-cyan-200/60 px-6 py-3.5 text-sm font-bold text-cyan-50">
+              Explore my projects <FaArrowRight />
+            </Link>
+            <Link href="https://github.com/nansari7287-sys" target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-3 rounded-xl border border-violet-300/45 bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-violet-100 transition duration-300 hover:-translate-y-1 hover:border-cyan-300 hover:text-cyan-100 hover:shadow-[0_0_25px_rgba(34,211,238,0.22)]">
+              <FaGithub /> GitHub
+            </Link>
+          </div>
+        </motion.div>
+
+        <motion.aside
+          initial={{ opacity: 0, x: 34, scale: 0.96 }}
+          animate={{ opacity: 1, x: 0, scale: 1 }}
+          transition={{ duration: 1, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
+          className="relative mx-auto flex w-full max-w-[360px] flex-col gap-5 sm:max-w-[390px]"
+        >
+          <div className="pointer-events-none absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-cyan-400/10 via-violet-500/[0.08] to-fuchsia-500/10 blur-3xl" />
+
+          <div className="identity-frame relative rounded-[2rem] p-3 sm:p-3.5">
+            <div className="identity-topline mb-3 flex items-center justify-between px-2 pt-1">
+              <span className="font-mono text-xs tracking-[0.2em] text-cyan-100">IDENTITY / 01</span>
+              <span className="flex items-center gap-2 rounded-full border border-fuchsia-300/40 bg-fuchsia-300/10 px-3 py-1 font-mono text-[10px] text-fuchsia-100 shadow-[0_0_16px_rgba(240,171,252,0.18)]">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-fuchsia-300" /> ACTIVE
+              </span>
             </div>
 
-            {/* STATE 2: REVEALED BOTTOM NAMEPLATE (Visible when clickCount === 1 or 2) */}
-            <div className={`absolute bottom-0 left-0 w-full p-5 bg-gradient-to-t from-black via-black/85 to-transparent transition-all duration-500 ease-out z-30 flex flex-col items-center justify-center ${
-              isRevealed ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0 pointer-events-none"
-            }`}>
-              
-              {/* Colorful Glowing 𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎 */}
-              <h2 className="text-2xl md:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 drop-shadow-[0_0_20px_rgba(244,114,182,0.9)] tracking-wider">
-                𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎
-              </h2>
-              
-              {/* Colorful Stylish 𝑵𝒂𝒆𝒆𝒎 with glowing divider */}
-              <div className="flex items-center gap-2.5 mt-1.5">
-                <div className="h-[2px] w-10 bg-gradient-to-r from-transparent via-cyan-400 to-purple-500"></div>
-                <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-pink-300 text-sm font-bold tracking-widest drop-shadow-[0_0_10px_rgba(6,182,212,0.8)]">
-                  𝑵𝒂𝒆𝒆𝒎
+            <button
+              type="button"
+              onClick={handlePhotoTap}
+              aria-label={photoRevealed ? "Tap to lock profile photo" : "Tap to reveal profile photo"}
+              className="identity-photo group relative block w-full overflow-hidden rounded-[1.45rem] border bg-black text-left focus-visible:outline-cyan-200"
+            >
+              <div className="relative aspect-[4/4.35] w-full">
+                <img
+                  src={profilePhoto}
+                  alt="Naeem profile"
+                  loading="eager"
+                  referrerPolicy="no-referrer"
+                  draggable={false}
+                  className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04] group-hover:brightness-110"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/10" />
+                <div className={`absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#030014]/80 px-4 text-center backdrop-blur-md transition-all duration-500 ${photoRevealed ? "pointer-events-none -translate-y-8 opacity-0" : "translate-y-0 opacity-100"}`}>
+                  <span className="font-mono text-[10px] tracking-[0.28em] text-cyan-200">IDENTITY LOCKED</span>
+                  <h2 className="Welcome-text mt-4 text-3xl font-black tracking-wider sm:text-4xl">𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎</h2>
+                  <span className="mt-5 rounded-full border border-cyan-300/50 bg-cyan-950/70 px-4 py-2 font-mono text-[10px] tracking-[0.18em] text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.3)] animate-pulse">[ TAP TO REVEAL ]</span>
                 </div>
-                <div className="h-[2px] w-10 bg-gradient-to-l from-transparent via-cyan-400 to-purple-500"></div>
+                <div className={`absolute bottom-0 left-0 z-20 w-full bg-gradient-to-t from-black via-black/75 to-transparent p-5 text-center transition-all duration-500 ${photoRevealed ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
+                  <h2 className="Welcome-text text-2xl font-black tracking-wider sm:text-3xl">𝑫𝒓𝒂𝒌𝒐𝑿𝑵𝒂𝒆𝒆𝒎</h2>
+                  <p className="mt-2 font-mono text-xs tracking-[0.3em] text-cyan-100">𝑵𝒂𝒆𝒆𝒎</p>
+                  <span className="mt-2 block text-[9px] tracking-[0.18em] text-fuchsia-200">TAP AGAIN TO LOCK</span>
+                </div>
               </div>
-
-              {/* Helper badge */}
-              <span className="text-[10px] font-mono text-cyan-400/70 mt-2 tracking-widest uppercase">
-                [ Click 3 times to lock ]
-              </span>
-            </div>
-
-            {/* Inner Border Glow */}
-            <div className="absolute inset-0 border-[2px] border-transparent group-hover:border-cyan-500/60 rounded-[24px] transition-colors duration-500 z-40 pointer-events-none"></div>
+            </button>
+            <div className="identity-bottomline mt-3 flex items-center justify-between px-2 pb-1 pt-1"><span className="font-mono text-[9px] tracking-[0.16em] text-cyan-100/70">NAEEM / PROFILE</span><span className="font-mono text-[9px] tracking-[0.16em] text-violet-100/70">01 — 02</span></div>
           </div>
-        </div>
-      </motion.div>
-      
-    </motion.div>
+
+          <div className="profile-glass relative rounded-[1.7rem] p-6 sm:p-7">
+            <div className="mb-5 flex items-center justify-between">
+              <span className="font-mono text-[10px] tracking-[0.22em] text-fuchsia-100">PROFILE / 02</span>
+              <span className="rounded-full border border-emerald-300/40 bg-emerald-300/10 px-3 py-1 text-[9px] font-mono text-emerald-100 shadow-[0_0_14px_rgba(52,211,153,0.18)]">LEARNING & BUILDING</span>
+            </div>
+            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl border border-cyan-300/45 bg-cyan-300/10 text-2xl text-cyan-100 shadow-[0_0_28px_rgba(34,211,238,0.25)]">
+              <FaGraduationCap />
+            </div>
+            <h2 className="text-2xl font-black text-white">Education</h2>
+            <p className="mt-3 text-base font-semibold leading-7 text-cyan-100">{PERSONAL_INFO.branch}</p>
+            <p className="mt-1 text-sm leading-6 text-violet-100">{PERSONAL_INFO.institute}</p>
+            <div className="my-5 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-fuchsia-300/70 shadow-[0_0_14px_rgba(103,232,249,0.55)]" />
+            <div className="flex items-center gap-3 text-sm text-slate-200">
+              <FaCode className="text-fuchsia-200 drop-shadow-[0_0_8px_rgba(240,171,252,0.8)]" />
+              Independent projects & continuous learning
+            </div>
+            <p className="mt-4 font-mono text-[10px] leading-6 tracking-[0.2em] text-cyan-100/80">BUILD • LEARN • IMPROVE</p>
+          </div>
+        </motion.aside>
+      </div>
+    </section>
   );
 };
 

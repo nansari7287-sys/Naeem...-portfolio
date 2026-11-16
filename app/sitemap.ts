@@ -1,15 +1,7 @@
-// ============================================================================
-// 📁 app/sitemap.ts
-// DYNAMIC SITEMAP GENERATOR ARCHITECTURE
-// ============================================================================
-// AUTHOR: DrakoXNaeem (Md Naeem Ansari)
-// ROLE: Electrical Engineer & Full-Stack Systems Architect
-// ============================================================================
-
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://frexxy-portfolio-3dri.vercel.app";
+  const baseUrl = "https://drakoxnaeem.vercel.app";
 
   return [
     {
