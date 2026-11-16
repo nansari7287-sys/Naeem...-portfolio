@@ -40,10 +40,10 @@ export const HeroContent = () => {
           <p className="mb-3 font-mono text-sm tracking-[0.2em] text-purple-200">HELLO, I&apos;M</p>
           <h1 className="text-5xl font-bold leading-[1.02] tracking-[-0.06em] text-white sm:text-7xl lg:text-[5.6rem]">
             <span className="Welcome-text">{PERSONAL_INFO.name}</span>
-            <span className="mt-4 block max-w-2xl text-2xl font-medium leading-tight tracking-[-0.04em] text-slate-200 sm:text-4xl">Engineering mind. <span className="Welcome-text font-semibold">Creative builds.</span></span>
+            <span className="Welcome-text mt-4 block max-w-2xl text-2xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl">Engineering mind. Creative builds.</span>
           </h1>
 
-          <p className="mt-7 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+          <p className="neon-copy mt-7 max-w-xl text-base leading-8 sm:text-lg">
             I&apos;m an Electrical Engineering diploma student exploring Android app development,
             website design and Telegram bot projects. I learn by experimenting, building and improving.
           </p>
@@ -76,11 +76,11 @@ export const HeroContent = () => {
           initial={{ opacity: 0, x: 34, scale: 0.96 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
-          className="relative mx-auto flex w-full max-w-[390px] flex-col gap-6"
+          className="relative mx-auto flex w-full max-w-[320px] flex-col gap-5 sm:max-w-[350px]"
         >
           <div className="pointer-events-none absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-cyan-400/10 via-violet-500/[0.08] to-fuchsia-500/10 blur-3xl" />
 
-          <div className="neon-frame relative rounded-[1.8rem] border border-white/10 bg-[#0a1020]/90 p-3 backdrop-blur-2xl">
+          <div className="neon-frame relative rounded-[1.6rem] border border-white/10 bg-[#0a1020]/90 p-2.5 backdrop-blur-2xl">
             <div className="mb-4 flex items-center justify-between px-2 pt-2">
               <span className="font-mono text-xs tracking-[0.2em] text-cyan-100">IDENTITY / 01</span>
               <span className="flex items-center gap-2 rounded-full border border-fuchsia-300/40 bg-fuchsia-300/10 px-3 py-1 font-mono text-[10px] text-fuchsia-100 shadow-[0_0_16px_rgba(240,171,252,0.18)]">
@@ -94,7 +94,7 @@ export const HeroContent = () => {
               aria-label={photoRevealed ? "Tap to lock profile photo" : "Tap to reveal profile photo"}
               className="group relative block w-full overflow-hidden rounded-[1.5rem] border border-cyan-200/35 bg-black text-left shadow-[0_0_28px_rgba(34,211,238,0.2)] focus-visible:outline-cyan-200"
             >
-              <div className="relative aspect-[4/5] w-full">
+              <div className="relative aspect-[1/1] w-full">
                 <img
                   src={profilePhoto}
                   alt="Naeem profile"
