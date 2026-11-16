@@ -5,7 +5,7 @@ import { FaGithub, FaHeart } from "react-icons/fa";
 import { FOOTER_DATA, PERSONAL_INFO } from "@/constants";
 
 export const Footer = () => (
-  <footer className="relative mt-16 overflow-hidden border-t border-violet-300/20 bg-[#040414]/90 px-5 pb-8 pt-12 backdrop-blur-2xl sm:px-8">
+  <footer className="relative mt-16 overflow-hidden border-t border-cyan-300/30 bg-[#040414]/90 px-5 pb-8 pt-12 backdrop-blur-2xl sm:px-8">
     <div className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-300 to-transparent shadow-[0_0_18px_rgba(34,211,238,0.7)]" />
     <div className="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
       <div>
