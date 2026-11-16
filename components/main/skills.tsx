@@ -22,8 +22,8 @@ export const Skills = () => (
     </div>
     <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {skills.map(({ title, detail, icon: Icon }, index) => (
-        <motion.article key={title} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.45, delay: index * 0.06 }} className="neon-frame group rounded-2xl border border-violet-400/30 bg-[#07071d]/75 p-6 shadow-[0_0_24px_rgba(124,58,237,0.07)] backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-300/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.12)]">
-          <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-300/25 bg-cyan-300/10 text-xl text-cyan-200 transition group-hover:border-fuchsia-300/50 group-hover:text-fuchsia-200"><Icon /></div>
+        <motion.article key={title} initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.45, delay: index * 0.06 }} className="neon-frame group rounded-[1.5rem] border border-white/10 bg-[#0a1020]/85 p-7 backdrop-blur-xl transition duration-300 hover:-translate-y-1">
+          <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-200/20 bg-cyan-300/[0.07] text-xl text-cyan-100 transition group-hover:border-cyan-200/40 group-hover:bg-cyan-300/10"><Icon /></div>
           <h3 className="text-lg font-bold text-white">{title}</h3>
           <p className="mt-3 text-sm leading-7 text-slate-400">{detail}</p>
         </motion.article>
