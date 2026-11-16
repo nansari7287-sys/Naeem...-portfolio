@@ -172,6 +172,38 @@ nav {
   box-shadow: 0 0 24px rgba(34, 211, 238, 0.08), 0 0 42px rgba(168, 85, 247, 0.06);
 }
 
+.neon-frame {
+  position: relative;
+  isolation: isolate;
+  border-color: rgba(103, 232, 249, 0.42) !important;
+  box-shadow:
+    0 0 16px rgba(34, 211, 238, 0.12),
+    0 0 38px rgba(139, 92, 246, 0.1),
+    inset 0 0 24px rgba(34, 211, 238, 0.035);
+}
+
+.neon-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(103,232,249,0.72), rgba(167,139,250,0.32), rgba(240,171,252,0.68));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.7;
+}
+
+.neon-frame:hover {
+  border-color: rgba(240, 171, 252, 0.68) !important;
+  box-shadow:
+    0 0 22px rgba(34, 211, 238, 0.2),
+    0 0 52px rgba(168, 85, 247, 0.18),
+    inset 0 0 30px rgba(34, 211, 238, 0.06);
+}
+
 .neon-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, #67e8f9, #a78bfa, #f0abfc, transparent);
