@@ -5,8 +5,8 @@ import { FaGithub, FaHeart } from "react-icons/fa";
 import { FOOTER_DATA, PERSONAL_INFO } from "@/constants";
 
 export const Footer = () => (
-  <footer className="relative mt-16 overflow-hidden border-t border-cyan-300/30 bg-[#040414]/90 px-5 pb-8 pt-12 backdrop-blur-2xl sm:px-8">
-    <div className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-300 to-transparent shadow-[0_0_18px_rgba(34,211,238,0.7)]" />
+  <footer className="relative mt-16 overflow-hidden border-t border-white/10 bg-[#070b16]/95 px-5 pb-8 pt-14 backdrop-blur-2xl sm:px-8">
+    <div className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-cyan-200/50 to-transparent" />
     <div className="mx-auto grid max-w-[1400px] gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
       <div>
         <Link href="#home" className="text-2xl font-black text-transparent bg-gradient-to-r from-cyan-300 via-violet-300 to-fuchsia-400 bg-clip-text">𝑵𝒂𝒆𝒆𝒎.</Link>
@@ -28,7 +28,7 @@ export const Footer = () => (
         </div>
       ))}
     </div>
-    <div className="mx-auto mt-10 flex max-w-[1400px] flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-center text-xs text-slate-500 sm:flex-row sm:text-left">
+    <div className="mx-auto mt-10 flex max-w-[1400px] flex-col items-center justify-between gap-3 border-t border-white/[0.08] pt-6 text-center text-xs text-slate-500 sm:flex-row sm:text-left">
       <span>© {new Date().getFullYear()} Naeem. All rights reserved.</span>
       <span className="inline-flex items-center gap-1.5">Made with <FaHeart className="text-fuchsia-300" /> and curiosity.</span>
     </div>
